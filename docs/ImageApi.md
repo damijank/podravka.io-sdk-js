@@ -19,25 +19,26 @@ Removes the Image resource.
 
 ### Example
 ```javascript
-import Podravkaio from 'podravkaio';
-let defaultClient = Podravkaio.ApiClient.instance;
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth
-let oauth = defaultClient.authentications['oauth'];
+var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ImageApi();
 
-let id = "id_example"; // String | 
+var id = "id_example"; // String | 
 
 
-apiInstance.deleteImageItem(id, (error, data, response) => {
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully.');
   }
-});
+};
+apiInstance.deleteImageItem(id, callback);
 ```
 
 ### Parameters
@@ -67,26 +68,27 @@ Retrieves the collection of Image resources.
 
 ### Example
 ```javascript
-import Podravkaio from 'podravkaio';
-let defaultClient = Podravkaio.ApiClient.instance;
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth
-let oauth = defaultClient.authentications['oauth'];
+var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ImageApi();
 
-let opts = { 
+var opts = { 
   'page': 56 // Number | The collection page number
 };
 
-apiInstance.getImageCollection(opts, (error, data, response) => {
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getImageCollection(opts, callback);
 ```
 
 ### Parameters
@@ -116,25 +118,26 @@ Retrieves a Image resource.
 
 ### Example
 ```javascript
-import Podravkaio from 'podravkaio';
-let defaultClient = Podravkaio.ApiClient.instance;
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth
-let oauth = defaultClient.authentications['oauth'];
+var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ImageApi();
 
-let id = "id_example"; // String | 
+var id = "id_example"; // String | 
 
 
-apiInstance.getImageItem(id, (error, data, response) => {
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.getImageItem(id, callback);
 ```
 
 ### Parameters
@@ -164,26 +167,27 @@ Creates a Image resource.
 
 ### Example
 ```javascript
-import Podravkaio from 'podravkaio';
-let defaultClient = Podravkaio.ApiClient.instance;
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth
-let oauth = defaultClient.authentications['oauth'];
+var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ImageApi();
 
-let opts = { 
+var opts = { 
   'image': new Podravkaio.ImageImageCreate() // ImageImageCreate | The new Image resource
 };
 
-apiInstance.postImageCollection(opts, (error, data, response) => {
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.postImageCollection(opts, callback);
 ```
 
 ### Parameters
@@ -213,28 +217,29 @@ Replaces the Image resource.
 
 ### Example
 ```javascript
-import Podravkaio from 'podravkaio';
-let defaultClient = Podravkaio.ApiClient.instance;
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth
-let oauth = defaultClient.authentications['oauth'];
+var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ImageApi();
 
-let id = "id_example"; // String | 
+var id = "id_example"; // String | 
 
-let opts = { 
+var opts = { 
   'image': new Podravkaio.ImageImageUpdate() // ImageImageUpdate | The updated Image resource
 };
 
-apiInstance.putImageItem(id, opts, (error, data, response) => {
+var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ' + data);
   }
-});
+};
+apiInstance.putImageItem(id, opts, callback);
 ```
 
 ### Parameters
