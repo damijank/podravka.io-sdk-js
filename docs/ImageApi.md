@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 <a name="postImageCollection"></a>
 # **postImageCollection**
-> ImageImageCreateReadCreateReadRead postImageCollection(opts)
+> ImageImageCreateReadRead postImageCollection(image)
 
 Creates a Image resource.
 
@@ -176,9 +176,8 @@ oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ImageApi();
 
-var opts = { 
-  'image': new Podravkaio.ImageImageCreate() // ImageImageCreate | The new Image resource
-};
+var image = new Podravkaio.ImageImageCreate(); // ImageImageCreate | The new Image resource
+
 
 var callback = function(error, data, response) {
   if (error) {
@@ -187,18 +186,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postImageCollection(opts, callback);
+apiInstance.postImageCollection(image, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImageImageCreate**](ImageImageCreate.md)| The new Image resource | [optional] 
+ **image** | [**ImageImageCreate**](ImageImageCreate.md)| The new Image resource | 
 
 ### Return type
 
-[**ImageImageCreateReadCreateReadRead**](ImageImageCreateReadCreateReadRead.md)
+[**ImageImageCreateReadRead**](ImageImageCreateReadRead.md)
 
 ### Authorization
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ImageOriginImageCreate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ImageOriginImageCreate'));
   } else {
     // Browser globals (root is window)
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageImageCreate = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.ImageImageCreate = factory(root.Podravkaio.ApiClient, root.Podravkaio.ImageOriginImageCreate);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ImageOriginImageCreate) {
   'use strict';
 
 
@@ -68,7 +68,7 @@
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('origin')) {
-        obj['origin'] = ApiClient.convertToType(data['origin'], 'String');
+        obj['origin'] = ImageOriginImageCreate.constructFromObject(data['origin']);
       }
     }
     return obj;
@@ -79,7 +79,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {String} origin
+   * @member {module:model/ImageOriginImageCreate} origin
    */
   exports.prototype['origin'] = undefined;
 

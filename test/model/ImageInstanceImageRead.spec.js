@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageImageUpdate();
+    instance = new Podravkaio.ImageInstanceImageRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,34 @@
       object[property] = value;
   }
 
-  describe('ImageImageUpdate', function() {
-    it('should create an instance of ImageImageUpdate', function() {
-      // uncomment below and update the code to test ImageImageUpdate
-      //var instane = new Podravkaio.ImageImageUpdate();
-      //expect(instance).to.be.a(Podravkaio.ImageImageUpdate);
+  describe('ImageInstanceImageRead', function() {
+    it('should create an instance of ImageInstanceImageRead', function() {
+      // uncomment below and update the code to test ImageInstanceImageRead
+      //var instane = new Podravkaio.ImageInstanceImageRead();
+      //expect(instance).to.be.a(Podravkaio.ImageInstanceImageRead);
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property filename (base name: "filename")', function() {
+      // uncomment below and update the code to test the property filename
+      //var instane = new Podravkaio.ImageInstanceImageRead();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instane = new Podravkaio.ImageInstanceImageRead();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property width (base name: "width")', function() {
+      // uncomment below and update the code to test the property width
+      //var instane = new Podravkaio.ImageInstanceImageRead();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property height (base name: "height")', function() {
+      // uncomment below and update the code to test the property height
+      //var instane = new Podravkaio.ImageInstanceImageRead();
       //expect(instance).to.be();
     });
 

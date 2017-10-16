@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**origin** | **String** |  | [optional] 
+**origin** | [**ImageOriginImageCreate**](ImageOriginImageCreate.md) |  | [optional] 
 
 

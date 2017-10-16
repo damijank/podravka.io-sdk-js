@@ -133,11 +133,16 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Podravkaio.ImageImageCreate](docs/ImageImageCreate.md)
- - [Podravkaio.ImageImageCreateReadCreateReadRead](docs/ImageImageCreateReadCreateReadRead.md)
+ - [Podravkaio.ImageImageCreateReadRead](docs/ImageImageCreateReadRead.md)
  - [Podravkaio.ImageImageListList](docs/ImageImageListList.md)
  - [Podravkaio.ImageImageReadRead](docs/ImageImageReadRead.md)
  - [Podravkaio.ImageImageUpdate](docs/ImageImageUpdate.md)
  - [Podravkaio.ImageImageUpdateReadUpdateReadRead](docs/ImageImageUpdateReadUpdateReadRead.md)
+ - [Podravkaio.ImageInstanceImageRead](docs/ImageInstanceImageRead.md)
+ - [Podravkaio.ImageOriginImageCreate](docs/ImageOriginImageCreate.md)
+ - [Podravkaio.ImageVariationImageRead](docs/ImageVariationImageRead.md)
+ - [Podravkaio.ImageVariationUrlVarsImageRead](docs/ImageVariationUrlVarsImageRead.md)
+ - [Podravkaio.UserImageCreateReadReadList](docs/UserImageCreateReadReadList.md)
 
 
 ## Documentation for Authorization

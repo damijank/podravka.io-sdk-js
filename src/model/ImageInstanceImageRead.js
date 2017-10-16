@@ -25,7 +25,7 @@
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageImageUpdate = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.ImageInstanceImageRead = factory(root.Podravkaio.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The ImageImageUpdate model module.
-   * @module model/ImageImageUpdate
+   * The ImageInstanceImageRead model module.
+   * @module model/ImageInstanceImageRead
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>ImageImageUpdate</code>.
-   * Image.
-   * @alias module:model/ImageImageUpdate
+   * Constructs a new <code>ImageInstanceImageRead</code>.
+   * Image instance.
+   * @alias module:model/ImageInstanceImageRead
    * @class
    */
   var exports = function() {
@@ -50,37 +50,53 @@
 
 
 
+
+
   };
 
   /**
-   * Constructs a <code>ImageImageUpdate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ImageInstanceImageRead</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageImageUpdate} obj Optional instance to populate.
-   * @return {module:model/ImageImageUpdate} The populated <code>ImageImageUpdate</code> instance.
+   * @param {module:model/ImageInstanceImageRead} obj Optional instance to populate.
+   * @return {module:model/ImageInstanceImageRead} The populated <code>ImageInstanceImageRead</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      if (data.hasOwnProperty('filename')) {
+        obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('width')) {
+        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
+      }
+      if (data.hasOwnProperty('height')) {
+        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} state
+   * @member {String} filename
    */
-  exports.prototype['state'] = undefined;
+  exports.prototype['filename'] = undefined;
   /**
-   * @member {String} name
+   * @member {String} type
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['type'] = undefined;
+  /**
+   * @member {Number} width
+   */
+  exports.prototype['width'] = undefined;
+  /**
+   * @member {Number} height
+   */
+  exports.prototype['height'] = undefined;
 
 
 

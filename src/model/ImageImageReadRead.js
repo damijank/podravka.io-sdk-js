@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ImageVariationImageRead', 'model/UserImageCreateReadReadList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ImageVariationImageRead'), require('./UserImageCreateReadReadList'));
   } else {
     // Browser globals (root is window)
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageImageReadRead = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.ImageImageReadRead = factory(root.Podravkaio.ApiClient, root.Podravkaio.ImageVariationImageRead, root.Podravkaio.UserImageCreateReadReadList);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ImageVariationImageRead, UserImageCreateReadReadList) {
   'use strict';
 
 
@@ -83,16 +83,16 @@
         obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
       }
       if (data.hasOwnProperty('created_by')) {
-        obj['created_by'] = ApiClient.convertToType(data['created_by'], 'String');
+        obj['created_by'] = UserImageCreateReadReadList.constructFromObject(data['created_by']);
       }
       if (data.hasOwnProperty('updated_at')) {
         obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
       }
       if (data.hasOwnProperty('updated_by')) {
-        obj['updated_by'] = ApiClient.convertToType(data['updated_by'], 'String');
+        obj['updated_by'] = UserImageCreateReadReadList.constructFromObject(data['updated_by']);
       }
       if (data.hasOwnProperty('variations')) {
-        obj['variations'] = ApiClient.convertToType(data['variations'], ['String']);
+        obj['variations'] = ApiClient.convertToType(data['variations'], [ImageVariationImageRead]);
       }
     }
     return obj;
@@ -115,7 +115,7 @@
    */
   exports.prototype['created_at'] = undefined;
   /**
-   * @member {String} created_by
+   * @member {module:model/UserImageCreateReadReadList} created_by
    */
   exports.prototype['created_by'] = undefined;
   /**
@@ -123,11 +123,11 @@
    */
   exports.prototype['updated_at'] = undefined;
   /**
-   * @member {String} updated_by
+   * @member {module:model/UserImageCreateReadReadList} updated_by
    */
   exports.prototype['updated_by'] = undefined;
   /**
-   * @member {Array.<String>} variations
+   * @member {Array.<module:model/ImageVariationImageRead>} variations
    */
   exports.prototype['variations'] = undefined;
 

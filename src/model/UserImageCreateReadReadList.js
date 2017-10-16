@@ -25,7 +25,7 @@
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageImageUpdate = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.UserImageCreateReadReadList = factory(root.Podravkaio.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The ImageImageUpdate model module.
-   * @module model/ImageImageUpdate
+   * The UserImageCreateReadReadList model module.
+   * @module model/UserImageCreateReadReadList
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>ImageImageUpdate</code>.
-   * Image.
-   * @alias module:model/ImageImageUpdate
+   * Constructs a new <code>UserImageCreateReadReadList</code>.
+   * User.
+   * @alias module:model/UserImageCreateReadReadList
    * @class
    */
   var exports = function() {
@@ -53,34 +53,34 @@
   };
 
   /**
-   * Constructs a <code>ImageImageUpdate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>UserImageCreateReadReadList</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageImageUpdate} obj Optional instance to populate.
-   * @return {module:model/ImageImageUpdate} The populated <code>ImageImageUpdate</code> instance.
+   * @param {module:model/UserImageCreateReadReadList} obj Optional instance to populate.
+   * @return {module:model/UserImageCreateReadReadList} The populated <code>UserImageCreateReadReadList</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('username')) {
+        obj['username'] = ApiClient.convertToType(data['username'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} state
+   * @member {String} id
    */
-  exports.prototype['state'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * @member {String} name
+   * @member {String} username
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['username'] = undefined;
 
 
 

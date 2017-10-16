@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageImageUpdate();
+    instance = new Podravkaio.ImageVariationImageRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('ImageImageUpdate', function() {
-    it('should create an instance of ImageImageUpdate', function() {
-      // uncomment below and update the code to test ImageImageUpdate
-      //var instane = new Podravkaio.ImageImageUpdate();
-      //expect(instance).to.be.a(Podravkaio.ImageImageUpdate);
+  describe('ImageVariationImageRead', function() {
+    it('should create an instance of ImageVariationImageRead', function() {
+      // uncomment below and update the code to test ImageVariationImageRead
+      //var instane = new Podravkaio.ImageVariationImageRead();
+      //expect(instance).to.be.a(Podravkaio.ImageVariationImageRead);
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property urlTemplate (base name: "url_template")', function() {
+      // uncomment below and update the code to test the property urlTemplate
+      //var instane = new Podravkaio.ImageVariationImageRead();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property urlVars (base name: "url_vars")', function() {
+      // uncomment below and update the code to test the property urlVars
+      //var instane = new Podravkaio.ImageVariationImageRead();
       //expect(instance).to.be();
     });
 

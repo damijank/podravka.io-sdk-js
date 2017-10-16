@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageImageCreate', 'model/ImageImageCreateReadCreateReadRead', 'model/ImageImageListList', 'model/ImageImageReadRead', 'model/ImageImageUpdate', 'model/ImageImageUpdateReadUpdateReadRead', 'api/ImageApi'], factory);
+    define(['ApiClient', 'model/ImageImageCreate', 'model/ImageImageCreateReadRead', 'model/ImageImageListList', 'model/ImageImageReadRead', 'model/ImageImageUpdate', 'model/ImageImageUpdateReadUpdateReadRead', 'model/ImageInstanceImageRead', 'model/ImageOriginImageCreate', 'model/ImageVariationImageRead', 'model/ImageVariationUrlVarsImageRead', 'model/UserImageCreateReadReadList', 'api/ImageApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ImageImageCreate'), require('./model/ImageImageCreateReadCreateReadRead'), require('./model/ImageImageListList'), require('./model/ImageImageReadRead'), require('./model/ImageImageUpdate'), require('./model/ImageImageUpdateReadUpdateReadRead'), require('./api/ImageApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ImageImageCreate'), require('./model/ImageImageCreateReadRead'), require('./model/ImageImageListList'), require('./model/ImageImageReadRead'), require('./model/ImageImageUpdate'), require('./model/ImageImageUpdateReadUpdateReadRead'), require('./model/ImageInstanceImageRead'), require('./model/ImageOriginImageCreate'), require('./model/ImageVariationImageRead'), require('./model/ImageVariationUrlVarsImageRead'), require('./model/UserImageCreateReadReadList'), require('./api/ImageApi'));
   }
-}(function(ApiClient, ImageImageCreate, ImageImageCreateReadCreateReadRead, ImageImageListList, ImageImageReadRead, ImageImageUpdate, ImageImageUpdateReadUpdateReadRead, ImageApi) {
+}(function(ApiClient, ImageImageCreate, ImageImageCreateReadRead, ImageImageListList, ImageImageReadRead, ImageImageUpdate, ImageImageUpdateReadUpdateReadRead, ImageInstanceImageRead, ImageOriginImageCreate, ImageVariationImageRead, ImageVariationUrlVarsImageRead, UserImageCreateReadReadList, ImageApi) {
   'use strict';
 
   /**
@@ -67,10 +67,10 @@
      */
     ImageImageCreate: ImageImageCreate,
     /**
-     * The ImageImageCreateReadCreateReadRead model constructor.
-     * @property {module:model/ImageImageCreateReadCreateReadRead}
+     * The ImageImageCreateReadRead model constructor.
+     * @property {module:model/ImageImageCreateReadRead}
      */
-    ImageImageCreateReadCreateReadRead: ImageImageCreateReadCreateReadRead,
+    ImageImageCreateReadRead: ImageImageCreateReadRead,
     /**
      * The ImageImageListList model constructor.
      * @property {module:model/ImageImageListList}
@@ -91,6 +91,31 @@
      * @property {module:model/ImageImageUpdateReadUpdateReadRead}
      */
     ImageImageUpdateReadUpdateReadRead: ImageImageUpdateReadUpdateReadRead,
+    /**
+     * The ImageInstanceImageRead model constructor.
+     * @property {module:model/ImageInstanceImageRead}
+     */
+    ImageInstanceImageRead: ImageInstanceImageRead,
+    /**
+     * The ImageOriginImageCreate model constructor.
+     * @property {module:model/ImageOriginImageCreate}
+     */
+    ImageOriginImageCreate: ImageOriginImageCreate,
+    /**
+     * The ImageVariationImageRead model constructor.
+     * @property {module:model/ImageVariationImageRead}
+     */
+    ImageVariationImageRead: ImageVariationImageRead,
+    /**
+     * The ImageVariationUrlVarsImageRead model constructor.
+     * @property {module:model/ImageVariationUrlVarsImageRead}
+     */
+    ImageVariationUrlVarsImageRead: ImageVariationUrlVarsImageRead,
+    /**
+     * The UserImageCreateReadReadList model constructor.
+     * @property {module:model/UserImageCreateReadReadList}
+     */
+    UserImageCreateReadReadList: UserImageCreateReadReadList,
     /**
      * The ImageApi service constructor.
      * @property {module:api/ImageApi}

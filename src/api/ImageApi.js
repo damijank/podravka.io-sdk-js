@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageImageCreate', 'model/ImageImageCreateReadCreateReadRead', 'model/ImageImageListList', 'model/ImageImageReadRead', 'model/ImageImageUpdate', 'model/ImageImageUpdateReadUpdateReadRead'], factory);
+    define(['ApiClient', 'model/ImageImageCreate', 'model/ImageImageCreateReadRead', 'model/ImageImageListList', 'model/ImageImageReadRead', 'model/ImageImageUpdate', 'model/ImageImageUpdateReadUpdateReadRead'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ImageImageCreate'), require('../model/ImageImageCreateReadCreateReadRead'), require('../model/ImageImageListList'), require('../model/ImageImageReadRead'), require('../model/ImageImageUpdate'), require('../model/ImageImageUpdateReadUpdateReadRead'));
+    module.exports = factory(require('../ApiClient'), require('../model/ImageImageCreate'), require('../model/ImageImageCreateReadRead'), require('../model/ImageImageListList'), require('../model/ImageImageReadRead'), require('../model/ImageImageUpdate'), require('../model/ImageImageUpdateReadUpdateReadRead'));
   } else {
     // Browser globals (root is window)
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageApi = factory(root.Podravkaio.ApiClient, root.Podravkaio.ImageImageCreate, root.Podravkaio.ImageImageCreateReadCreateReadRead, root.Podravkaio.ImageImageListList, root.Podravkaio.ImageImageReadRead, root.Podravkaio.ImageImageUpdate, root.Podravkaio.ImageImageUpdateReadUpdateReadRead);
+    root.Podravkaio.ImageApi = factory(root.Podravkaio.ApiClient, root.Podravkaio.ImageImageCreate, root.Podravkaio.ImageImageCreateReadRead, root.Podravkaio.ImageImageListList, root.Podravkaio.ImageImageReadRead, root.Podravkaio.ImageImageUpdate, root.Podravkaio.ImageImageUpdateReadUpdateReadRead);
   }
-}(this, function(ApiClient, ImageImageCreate, ImageImageCreateReadCreateReadRead, ImageImageListList, ImageImageReadRead, ImageImageUpdate, ImageImageUpdateReadUpdateReadRead) {
+}(this, function(ApiClient, ImageImageCreate, ImageImageCreateReadRead, ImageImageListList, ImageImageReadRead, ImageImageUpdate, ImageImageUpdateReadUpdateReadRead) {
   'use strict';
 
   /**
@@ -188,20 +188,23 @@
      * Callback function to receive the result of the postImageCollection operation.
      * @callback module:api/ImageApi~postImageCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ImageImageCreateReadCreateReadRead} data The data returned by the service call.
+     * @param {module:model/ImageImageCreateReadRead} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Creates a Image resource.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ImageImageCreate} opts.image The new Image resource
+     * @param {module:model/ImageImageCreate} image The new Image resource
      * @param {module:api/ImageApi~postImageCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ImageImageCreateReadCreateReadRead}
+     * data is of type: {@link module:model/ImageImageCreateReadRead}
      */
-    this.postImageCollection = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['image'];
+    this.postImageCollection = function(image, callback) {
+      var postBody = image;
+
+      // verify the required parameter 'image' is set
+      if (image === undefined || image === null) {
+        throw new Error("Missing the required parameter 'image' when calling postImageCollection");
+      }
 
 
       var pathParams = {
@@ -218,7 +221,7 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/ld+json', 'application/json', 'text/html'];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = ImageImageCreateReadCreateReadRead;
+      var returnType = ImageImageCreateReadRead;
 
       return this.apiClient.callApi(
         '/api/images', 'POST',

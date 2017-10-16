@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageImageUpdate();
+    instance = new Podravkaio.ImageVariationUrlVarsImageRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,16 @@
       object[property] = value;
   }
 
-  describe('ImageImageUpdate', function() {
-    it('should create an instance of ImageImageUpdate', function() {
-      // uncomment below and update the code to test ImageImageUpdate
-      //var instane = new Podravkaio.ImageImageUpdate();
-      //expect(instance).to.be.a(Podravkaio.ImageImageUpdate);
+  describe('ImageVariationUrlVarsImageRead', function() {
+    it('should create an instance of ImageVariationUrlVarsImageRead', function() {
+      // uncomment below and update the code to test ImageVariationUrlVarsImageRead
+      //var instane = new Podravkaio.ImageVariationUrlVarsImageRead();
+      //expect(instance).to.be.a(Podravkaio.ImageVariationUrlVarsImageRead);
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Podravkaio.ImageImageUpdate();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property instance (base name: "instance")', function() {
+      // uncomment below and update the code to test the property instance
+      //var instane = new Podravkaio.ImageVariationUrlVarsImageRead();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# Podravkaio.ImageImageCreateReadCreateReadRead
+# Podravkaio.ImageImageCreateReadRead
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **name** | **String** |  | 
 **createdAt** | **Date** |  | [optional] 
-**createdBy** | **String** |  | [optional] 
+**createdBy** | [**UserImageCreateReadReadList**](UserImageCreateReadReadList.md) |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**updatedBy** | **String** |  | [optional] 
+**updatedBy** | [**UserImageCreateReadReadList**](UserImageCreateReadReadList.md) |  | [optional] 
 
 

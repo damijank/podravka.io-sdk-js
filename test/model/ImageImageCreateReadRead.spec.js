@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageImageCreateReadCreateReadRead();
+    instance = new Podravkaio.ImageImageCreateReadRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,52 +49,52 @@
       object[property] = value;
   }
 
-  describe('ImageImageCreateReadCreateReadRead', function() {
-    it('should create an instance of ImageImageCreateReadCreateReadRead', function() {
-      // uncomment below and update the code to test ImageImageCreateReadCreateReadRead
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
-      //expect(instance).to.be.a(Podravkaio.ImageImageCreateReadCreateReadRead);
+  describe('ImageImageCreateReadRead', function() {
+    it('should create an instance of ImageImageCreateReadRead', function() {
+      // uncomment below and update the code to test ImageImageCreateReadRead
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
+      //expect(instance).to.be.a(Podravkaio.ImageImageCreateReadRead);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 
     it('should have the property createdBy (base name: "created_by")', function() {
       // uncomment below and update the code to test the property createdBy
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedBy (base name: "updated_by")', function() {
       // uncomment below and update the code to test the property updatedBy
-      //var instane = new Podravkaio.ImageImageCreateReadCreateReadRead();
+      //var instane = new Podravkaio.ImageImageCreateReadRead();
       //expect(instance).to.be();
     });
 

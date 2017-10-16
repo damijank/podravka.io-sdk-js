@@ -25,7 +25,7 @@
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageImageUpdate = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.ImageOriginImageCreate = factory(root.Podravkaio.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,53 +34,62 @@
 
 
   /**
-   * The ImageImageUpdate model module.
-   * @module model/ImageImageUpdate
+   * The ImageOriginImageCreate model module.
+   * @module model/ImageOriginImageCreate
    * @version 0.0.1
    */
 
   /**
-   * Constructs a new <code>ImageImageUpdate</code>.
-   * Image.
-   * @alias module:model/ImageImageUpdate
+   * Constructs a new <code>ImageOriginImageCreate</code>.
+   * Image Origin.
+   * @alias module:model/ImageOriginImageCreate
    * @class
+   * @param url {String} 
    */
-  var exports = function() {
+  var exports = function(url) {
     var _this = this;
 
+    _this['url'] = url;
 
 
   };
 
   /**
-   * Constructs a <code>ImageImageUpdate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ImageOriginImageCreate</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageImageUpdate} obj Optional instance to populate.
-   * @return {module:model/ImageImageUpdate} The populated <code>ImageImageUpdate</code> instance.
+   * @param {module:model/ImageOriginImageCreate} obj Optional instance to populate.
+   * @return {module:model/ImageOriginImageCreate} The populated <code>ImageOriginImageCreate</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      if (data.hasOwnProperty('url')) {
+        obj['url'] = ApiClient.convertToType(data['url'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('filename')) {
+        obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
+      }
+      if (data.hasOwnProperty('identifier')) {
+        obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} state
+   * @member {String} url
    */
-  exports.prototype['state'] = undefined;
+  exports.prototype['url'] = undefined;
   /**
-   * @member {String} name
+   * @member {String} filename
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['filename'] = undefined;
+  /**
+   * @member {String} identifier
+   */
+  exports.prototype['identifier'] = undefined;
 
 
 

@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageImageUpdate();
+    instance = new Podravkaio.ImageOriginImageCreate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,28 @@
       object[property] = value;
   }
 
-  describe('ImageImageUpdate', function() {
-    it('should create an instance of ImageImageUpdate', function() {
-      // uncomment below and update the code to test ImageImageUpdate
-      //var instane = new Podravkaio.ImageImageUpdate();
-      //expect(instance).to.be.a(Podravkaio.ImageImageUpdate);
+  describe('ImageOriginImageCreate', function() {
+    it('should create an instance of ImageOriginImageCreate', function() {
+      // uncomment below and update the code to test ImageOriginImageCreate
+      //var instane = new Podravkaio.ImageOriginImageCreate();
+      //expect(instance).to.be.a(Podravkaio.ImageOriginImageCreate);
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new Podravkaio.ImageOriginImageCreate();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Podravkaio.ImageImageUpdate();
+    it('should have the property filename (base name: "filename")', function() {
+      // uncomment below and update the code to test the property filename
+      //var instane = new Podravkaio.ImageOriginImageCreate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new Podravkaio.ImageOriginImageCreate();
       //expect(instance).to.be();
     });
 
