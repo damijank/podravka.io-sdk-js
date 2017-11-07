@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageVariationImageRead();
+    instance = new Podravkaio.ArticleOriginApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,25 +49,27 @@
       object[property] = value;
   }
 
-  describe('ImageVariationImageRead', function() {
-    it('should create an instance of ImageVariationImageRead', function() {
-      // uncomment below and update the code to test ImageVariationImageRead
-      //var instane = new Podravkaio.ImageVariationImageRead();
-      //expect(instance).to.be.a(Podravkaio.ImageVariationImageRead);
+  describe('ArticleOriginApi', function() {
+    describe('apiArticleOriginsGetEmbeddedArticleOriginItem', function() {
+      it('should call apiArticleOriginsGetEmbeddedArticleOriginItem successfully', function(done) {
+        //uncomment below and update the code to test apiArticleOriginsGetEmbeddedArticleOriginItem
+        //instance.apiArticleOriginsGetEmbeddedArticleOriginItem(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property urlTemplate (base name: "url_template")', function() {
-      // uncomment below and update the code to test the property urlTemplate
-      //var instane = new Podravkaio.ImageVariationImageRead();
-      //expect(instance).to.be();
+    describe('apiArticlesOriginGetSubresourceArticleOriginCollection', function() {
+      it('should call apiArticlesOriginGetSubresourceArticleOriginCollection successfully', function(done) {
+        //uncomment below and update the code to test apiArticlesOriginGetSubresourceArticleOriginCollection
+        //instance.apiArticlesOriginGetSubresourceArticleOriginCollection(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property urlVars (base name: "url_vars")', function() {
-      // uncomment below and update the code to test the property urlVars
-      //var instane = new Podravkaio.ImageVariationImageRead();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

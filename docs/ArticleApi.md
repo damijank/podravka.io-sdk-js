@@ -1,17 +1,17 @@
-# Podravkaio.ImageApi
+# Podravkaio.ArticleApi
 
 All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiArticlesImagesGetSubresource**](ImageApi.md#apiArticlesImagesGetSubresource) | **GET** /api/articles/{id}/images | Retrieves the collection of Image resources.
-[**apiGetStateImageItem**](ImageApi.md#apiGetStateImageItem) | **GET** /api/images/{id}/state | Retrieves a Image resource.
-[**apiSetStateImageItem**](ImageApi.md#apiSetStateImageItem) | **PUT** /api/images/{id}/state/{state} | Replaces the Image resource.
-[**deleteImageItem**](ImageApi.md#deleteImageItem) | **DELETE** /api/images/{id} | Removes the Image resource.
-[**getImageCollection**](ImageApi.md#getImageCollection) | **GET** /api/images | Retrieves the collection of Image resources.
-[**getImageItem**](ImageApi.md#getImageItem) | **GET** /api/images/{id} | Retrieves a Image resource.
-[**postImageCollection**](ImageApi.md#postImageCollection) | **POST** /api/images | Creates a Image resource.
-[**putImageItem**](ImageApi.md#putImageItem) | **PUT** /api/images/{id} | Replaces the Image resource.
+[**apiArticlesImagesGetSubresource**](ArticleApi.md#apiArticlesImagesGetSubresource) | **GET** /api/articles/{id}/images | Retrieves the collection of Image resources.
+[**apiGetStateArticleItem**](ArticleApi.md#apiGetStateArticleItem) | **GET** /api/articles/{id}/state | Retrieves a Article resource.
+[**apiSetStateArticleItem**](ArticleApi.md#apiSetStateArticleItem) | **PUT** /api/articles/{id}/state/{state} | Replaces the Article resource.
+[**deleteArticleItem**](ArticleApi.md#deleteArticleItem) | **DELETE** /api/articles/{id} | Removes the Article resource.
+[**getArticleCollection**](ArticleApi.md#getArticleCollection) | **GET** /api/articles | Retrieves the collection of Article resources.
+[**getArticleItem**](ArticleApi.md#getArticleItem) | **GET** /api/articles/{id} | Retrieves a Article resource.
+[**postArticleCollection**](ArticleApi.md#postArticleCollection) | **POST** /api/articles | Creates a Article resource.
+[**putArticleItem**](ArticleApi.md#putArticleItem) | **PUT** /api/articles/{id} | Replaces the Article resource.
 
 
 <a name="apiArticlesImagesGetSubresource"></a>
@@ -29,7 +29,7 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var id = "id_example"; // String | 
 
@@ -63,11 +63,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/ld+json, application/json, text/html
 
-<a name="apiGetStateImageItem"></a>
-# **apiGetStateImageItem**
-> ImageApiState apiGetStateImageItem(id)
+<a name="apiGetStateArticleItem"></a>
+# **apiGetStateArticleItem**
+> ArticleApiState apiGetStateArticleItem(id)
 
-Retrieves a Image resource.
+Retrieves a Article resource.
 
 ### Example
 ```javascript
@@ -78,7 +78,7 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var id = "id_example"; // String | 
 
@@ -90,7 +90,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.apiGetStateImageItem(id, callback);
+apiInstance.apiGetStateArticleItem(id, callback);
 ```
 
 ### Parameters
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageApiState**](ImageApiState.md)
+[**ArticleApiState**](ArticleApiState.md)
 
 ### Authorization
 
@@ -112,11 +112,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/ld+json, application/json, text/html
 
-<a name="apiSetStateImageItem"></a>
-# **apiSetStateImageItem**
-> ImageApiState apiSetStateImageItem(id, state)
+<a name="apiSetStateArticleItem"></a>
+# **apiSetStateArticleItem**
+> ArticleApiState apiSetStateArticleItem(id, state)
 
-Replaces the Image resource.
+Replaces the Article resource.
 
 ### Example
 ```javascript
@@ -127,7 +127,7 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var id = "id_example"; // String | 
 
@@ -141,7 +141,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.apiSetStateImageItem(id, state, callback);
+apiInstance.apiSetStateArticleItem(id, state, callback);
 ```
 
 ### Parameters
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageApiState**](ImageApiState.md)
+[**ArticleApiState**](ArticleApiState.md)
 
 ### Authorization
 
@@ -164,11 +164,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/ld+json, application/json, text/html
  - **Accept**: application/ld+json, application/json, text/html
 
-<a name="deleteImageItem"></a>
-# **deleteImageItem**
-> deleteImageItem(id)
+<a name="deleteArticleItem"></a>
+# **deleteArticleItem**
+> deleteArticleItem(id)
 
-Removes the Image resource.
+Removes the Article resource.
 
 ### Example
 ```javascript
@@ -179,7 +179,7 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var id = "id_example"; // String | 
 
@@ -191,7 +191,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteImageItem(id, callback);
+apiInstance.deleteArticleItem(id, callback);
 ```
 
 ### Parameters
@@ -213,11 +213,11 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getImageCollection"></a>
-# **getImageCollection**
-> [ImageImageListList] getImageCollection(opts)
+<a name="getArticleCollection"></a>
+# **getArticleCollection**
+> [ArticleArticleListList] getArticleCollection(opts)
 
-Retrieves the collection of Image resources.
+Retrieves the collection of Article resources.
 
 ### Example
 ```javascript
@@ -228,7 +228,7 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var opts = { 
   'page': 56 // Number | The collection page number
@@ -241,7 +241,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getImageCollection(opts, callback);
+apiInstance.getArticleCollection(opts, callback);
 ```
 
 ### Parameters
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ImageImageListList]**](ImageImageListList.md)
+[**[ArticleArticleListList]**](ArticleArticleListList.md)
 
 ### Authorization
 
@@ -263,11 +263,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/ld+json, application/json, text/html
 
-<a name="getImageItem"></a>
-# **getImageItem**
-> ImageImageReadRead getImageItem(id)
+<a name="getArticleItem"></a>
+# **getArticleItem**
+> ArticleArticleReadRead getArticleItem(id)
 
-Retrieves a Image resource.
+Retrieves a Article resource.
 
 ### Example
 ```javascript
@@ -278,7 +278,7 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var id = "id_example"; // String | 
 
@@ -290,7 +290,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getImageItem(id, callback);
+apiInstance.getArticleItem(id, callback);
 ```
 
 ### Parameters
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageImageReadRead**](ImageImageReadRead.md)
+[**ArticleArticleReadRead**](ArticleArticleReadRead.md)
 
 ### Authorization
 
@@ -312,11 +312,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/ld+json, application/json, text/html
 
-<a name="postImageCollection"></a>
-# **postImageCollection**
-> ImageImageCreateReadCreateReadRead postImageCollection(image)
+<a name="postArticleCollection"></a>
+# **postArticleCollection**
+> ArticleArticleCreateReadCreateReadArticleReadRead postArticleCollection(opts)
 
-Creates a Image resource.
+Creates a Article resource.
 
 ### Example
 ```javascript
@@ -327,10 +327,11 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
-var image = new Podravkaio.ImageImageCreate(); // ImageImageCreate | The new Image resource
-
+var opts = { 
+  'article': new Podravkaio.ArticleArticleCreate() // ArticleArticleCreate | The new Article resource
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -339,18 +340,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postImageCollection(image, callback);
+apiInstance.postArticleCollection(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImageImageCreate**](ImageImageCreate.md)| The new Image resource | 
+ **article** | [**ArticleArticleCreate**](ArticleArticleCreate.md)| The new Article resource | [optional] 
 
 ### Return type
 
-[**ImageImageCreateReadCreateReadRead**](ImageImageCreateReadCreateReadRead.md)
+[**ArticleArticleCreateReadCreateReadArticleReadRead**](ArticleArticleCreateReadCreateReadArticleReadRead.md)
 
 ### Authorization
 
@@ -361,11 +362,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/ld+json, application/json, text/html
  - **Accept**: application/ld+json, application/json, text/html
 
-<a name="putImageItem"></a>
-# **putImageItem**
-> ImageImageUpdateReadUpdateReadRead putImageItem(id, opts)
+<a name="putArticleItem"></a>
+# **putArticleItem**
+> ArticleArticleUpdateReadUpdateReadArticleReadRead putArticleItem(id, opts)
 
-Replaces the Image resource.
+Replaces the Article resource.
 
 ### Example
 ```javascript
@@ -376,12 +377,12 @@ var defaultClient = Podravkaio.ApiClient.instance;
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new Podravkaio.ImageApi();
+var apiInstance = new Podravkaio.ArticleApi();
 
 var id = "id_example"; // String | 
 
 var opts = { 
-  'image': new Podravkaio.ImageImageUpdate() // ImageImageUpdate | The updated Image resource
+  'article': new Podravkaio.ArticleArticleUpdate() // ArticleArticleUpdate | The updated Article resource
 };
 
 var callback = function(error, data, response) {
@@ -391,7 +392,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.putImageItem(id, opts, callback);
+apiInstance.putArticleItem(id, opts, callback);
 ```
 
 ### Parameters
@@ -399,11 +400,11 @@ apiInstance.putImageItem(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **image** | [**ImageImageUpdate**](ImageImageUpdate.md)| The updated Image resource | [optional] 
+ **article** | [**ArticleArticleUpdate**](ArticleArticleUpdate.md)| The updated Article resource | [optional] 
 
 ### Return type
 
-[**ImageImageUpdateReadUpdateReadRead**](ImageImageUpdateReadUpdateReadRead.md)
+[**ArticleArticleUpdateReadUpdateReadArticleReadRead**](ArticleArticleUpdateReadUpdateReadArticleReadRead.md)
 
 ### Authorization
 

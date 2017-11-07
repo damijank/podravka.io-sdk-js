@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageImageListList();
+    instance = new Podravkaio.ArticleArticleListList();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,46 +49,46 @@
       object[property] = value;
   }
 
-  describe('ImageImageListList', function() {
-    it('should create an instance of ImageImageListList', function() {
-      // uncomment below and update the code to test ImageImageListList
-      //var instane = new Podravkaio.ImageImageListList();
-      //expect(instance).to.be.a(Podravkaio.ImageImageListList);
+  describe('ArticleArticleListList', function() {
+    it('should create an instance of ArticleArticleListList', function() {
+      // uncomment below and update the code to test ArticleArticleListList
+      //var instane = new Podravkaio.ArticleArticleListList();
+      //expect(instance).to.be.a(Podravkaio.ArticleArticleListList);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new Podravkaio.ImageImageListList();
+      //var instane = new Podravkaio.ArticleArticleListList();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Podravkaio.ImageImageListList();
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new Podravkaio.ArticleArticleListList();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instane = new Podravkaio.ImageImageListList();
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
+      //var instane = new Podravkaio.ArticleArticleListList();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdBy (base name: "created_by")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instane = new Podravkaio.ImageImageListList();
+    it('should have the property subtitle (base name: "subtitle")', function() {
+      // uncomment below and update the code to test the property subtitle
+      //var instane = new Podravkaio.ArticleArticleListList();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updated_at")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instane = new Podravkaio.ImageImageListList();
+    it('should have the property teaser (base name: "teaser")', function() {
+      // uncomment below and update the code to test the property teaser
+      //var instane = new Podravkaio.ArticleArticleListList();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedBy (base name: "updated_by")', function() {
-      // uncomment below and update the code to test the property updatedBy
-      //var instane = new Podravkaio.ImageImageListList();
+    it('should have the property lead (base name: "lead")', function() {
+      // uncomment below and update the code to test the property lead
+      //var instane = new Podravkaio.ArticleArticleListList();
       //expect(instance).to.be();
     });
 

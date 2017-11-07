@@ -1,8 +1,9 @@
-# Podravkaio.ImageImageUpdate
+# Podravkaio.ArticleApiState
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
+**id** | **String** |  | [optional] 
+**state** | **String** |  | [optional] 
 
 

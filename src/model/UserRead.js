@@ -25,7 +25,7 @@
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageInstanceImageRead = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.UserRead = factory(root.Podravkaio.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The ImageInstanceImageRead model module.
-   * @module model/ImageInstanceImageRead
+   * The UserRead model module.
+   * @module model/UserRead
    * @version 0.0.2
    */
 
   /**
-   * Constructs a new <code>ImageInstanceImageRead</code>.
-   * Image instance.
-   * @alias module:model/ImageInstanceImageRead
+   * Constructs a new <code>UserRead</code>.
+   * User.
+   * @alias module:model/UserRead
    * @class
    */
   var exports = function() {
@@ -50,53 +50,37 @@
 
 
 
-
-
   };
 
   /**
-   * Constructs a <code>ImageInstanceImageRead</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>UserRead</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageInstanceImageRead} obj Optional instance to populate.
-   * @return {module:model/ImageInstanceImageRead} The populated <code>ImageInstanceImageRead</code> instance.
+   * @param {module:model/UserRead} obj Optional instance to populate.
+   * @return {module:model/UserRead} The populated <code>UserRead</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('filename')) {
-        obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
-      }
-      if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
+      if (data.hasOwnProperty('username')) {
+        obj['username'] = ApiClient.convertToType(data['username'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} filename
+   * @member {String} id
    */
-  exports.prototype['filename'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * @member {String} type
+   * @member {String} username
    */
-  exports.prototype['type'] = undefined;
-  /**
-   * @member {Number} width
-   */
-  exports.prototype['width'] = undefined;
-  /**
-   * @member {Number} height
-   */
-  exports.prototype['height'] = undefined;
+  exports.prototype['username'] = undefined;
 
 
 

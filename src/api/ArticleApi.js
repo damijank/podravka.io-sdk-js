@@ -16,29 +16,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageApiState', 'model/ImageImageCreate', 'model/ImageImageCreateReadCreateReadRead', 'model/ImageImageListList', 'model/ImageImageReadRead', 'model/ImageImageUpdate', 'model/ImageImageUpdateReadUpdateReadRead'], factory);
+    define(['ApiClient', 'model/ArticleApiState', 'model/ArticleArticleCreate', 'model/ArticleArticleCreateReadCreateReadArticleReadRead', 'model/ArticleArticleListList', 'model/ArticleArticleReadRead', 'model/ArticleArticleUpdate', 'model/ArticleArticleUpdateReadUpdateReadArticleReadRead', 'model/ImageImageReadRead'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ImageApiState'), require('../model/ImageImageCreate'), require('../model/ImageImageCreateReadCreateReadRead'), require('../model/ImageImageListList'), require('../model/ImageImageReadRead'), require('../model/ImageImageUpdate'), require('../model/ImageImageUpdateReadUpdateReadRead'));
+    module.exports = factory(require('../ApiClient'), require('../model/ArticleApiState'), require('../model/ArticleArticleCreate'), require('../model/ArticleArticleCreateReadCreateReadArticleReadRead'), require('../model/ArticleArticleListList'), require('../model/ArticleArticleReadRead'), require('../model/ArticleArticleUpdate'), require('../model/ArticleArticleUpdateReadUpdateReadArticleReadRead'), require('../model/ImageImageReadRead'));
   } else {
     // Browser globals (root is window)
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.ImageApi = factory(root.Podravkaio.ApiClient, root.Podravkaio.ImageApiState, root.Podravkaio.ImageImageCreate, root.Podravkaio.ImageImageCreateReadCreateReadRead, root.Podravkaio.ImageImageListList, root.Podravkaio.ImageImageReadRead, root.Podravkaio.ImageImageUpdate, root.Podravkaio.ImageImageUpdateReadUpdateReadRead);
+    root.Podravkaio.ArticleApi = factory(root.Podravkaio.ApiClient, root.Podravkaio.ArticleApiState, root.Podravkaio.ArticleArticleCreate, root.Podravkaio.ArticleArticleCreateReadCreateReadArticleReadRead, root.Podravkaio.ArticleArticleListList, root.Podravkaio.ArticleArticleReadRead, root.Podravkaio.ArticleArticleUpdate, root.Podravkaio.ArticleArticleUpdateReadUpdateReadArticleReadRead, root.Podravkaio.ImageImageReadRead);
   }
-}(this, function(ApiClient, ImageApiState, ImageImageCreate, ImageImageCreateReadCreateReadRead, ImageImageListList, ImageImageReadRead, ImageImageUpdate, ImageImageUpdateReadUpdateReadRead) {
+}(this, function(ApiClient, ArticleApiState, ArticleArticleCreate, ArticleArticleCreateReadCreateReadArticleReadRead, ArticleArticleListList, ArticleArticleReadRead, ArticleArticleUpdate, ArticleArticleUpdateReadUpdateReadArticleReadRead, ImageImageReadRead) {
   'use strict';
 
   /**
-   * Image service.
-   * @module api/ImageApi
+   * Article service.
+   * @module api/ArticleApi
    * @version 0.0.2
    */
 
   /**
-   * Constructs a new ImageApi. 
-   * @alias module:api/ImageApi
+   * Constructs a new ArticleApi. 
+   * @alias module:api/ArticleApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -49,7 +49,7 @@
 
     /**
      * Callback function to receive the result of the apiArticlesImagesGetSubresource operation.
-     * @callback module:api/ImageApi~apiArticlesImagesGetSubresourceCallback
+     * @callback module:api/ArticleApi~apiArticlesImagesGetSubresourceCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/ImageImageReadRead>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -58,7 +58,7 @@
     /**
      * Retrieves the collection of Image resources.
      * @param {String} id 
-     * @param {module:api/ImageApi~apiArticlesImagesGetSubresourceCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ArticleApi~apiArticlesImagesGetSubresourceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ImageImageReadRead>}
      */
     this.apiArticlesImagesGetSubresource = function(id, callback) {
@@ -95,25 +95,25 @@
     }
 
     /**
-     * Callback function to receive the result of the apiGetStateImageItem operation.
-     * @callback module:api/ImageApi~apiGetStateImageItemCallback
+     * Callback function to receive the result of the apiGetStateArticleItem operation.
+     * @callback module:api/ArticleApi~apiGetStateArticleItemCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ImageApiState} data The data returned by the service call.
+     * @param {module:model/ArticleApiState} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieves a Image resource.
+     * Retrieves a Article resource.
      * @param {String} id 
-     * @param {module:api/ImageApi~apiGetStateImageItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ImageApiState}
+     * @param {module:api/ArticleApi~apiGetStateArticleItemCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ArticleApiState}
      */
-    this.apiGetStateImageItem = function(id, callback) {
+    this.apiGetStateArticleItem = function(id, callback) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling apiGetStateImageItem");
+        throw new Error("Missing the required parameter 'id' when calling apiGetStateArticleItem");
       }
 
 
@@ -132,41 +132,41 @@
       var authNames = ['oauth'];
       var contentTypes = [];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = ImageApiState;
+      var returnType = ArticleApiState;
 
       return this.apiClient.callApi(
-        '/api/images/{id}/state', 'GET',
+        '/api/articles/{id}/state', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the apiSetStateImageItem operation.
-     * @callback module:api/ImageApi~apiSetStateImageItemCallback
+     * Callback function to receive the result of the apiSetStateArticleItem operation.
+     * @callback module:api/ArticleApi~apiSetStateArticleItemCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ImageApiState} data The data returned by the service call.
+     * @param {module:model/ArticleApiState} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Replaces the Image resource.
+     * Replaces the Article resource.
      * @param {String} id 
      * @param {String} state 
-     * @param {module:api/ImageApi~apiSetStateImageItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ImageApiState}
+     * @param {module:api/ArticleApi~apiSetStateArticleItemCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ArticleApiState}
      */
-    this.apiSetStateImageItem = function(id, state, callback) {
+    this.apiSetStateArticleItem = function(id, state, callback) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling apiSetStateImageItem");
+        throw new Error("Missing the required parameter 'id' when calling apiSetStateArticleItem");
       }
 
       // verify the required parameter 'state' is set
       if (state === undefined || state === null) {
-        throw new Error("Missing the required parameter 'state' when calling apiSetStateImageItem");
+        throw new Error("Missing the required parameter 'state' when calling apiSetStateArticleItem");
       }
 
 
@@ -186,34 +186,34 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/ld+json', 'application/json', 'text/html'];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = ImageApiState;
+      var returnType = ArticleApiState;
 
       return this.apiClient.callApi(
-        '/api/images/{id}/state/{state}', 'PUT',
+        '/api/articles/{id}/state/{state}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteImageItem operation.
-     * @callback module:api/ImageApi~deleteImageItemCallback
+     * Callback function to receive the result of the deleteArticleItem operation.
+     * @callback module:api/ArticleApi~deleteArticleItemCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Removes the Image resource.
+     * Removes the Article resource.
      * @param {String} id 
-     * @param {module:api/ImageApi~deleteImageItemCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ArticleApi~deleteArticleItemCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteImageItem = function(id, callback) {
+    this.deleteArticleItem = function(id, callback) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling deleteImageItem");
+        throw new Error("Missing the required parameter 'id' when calling deleteArticleItem");
       }
 
 
@@ -235,28 +235,28 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/api/images/{id}', 'DELETE',
+        '/api/articles/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getImageCollection operation.
-     * @callback module:api/ImageApi~getImageCollectionCallback
+     * Callback function to receive the result of the getArticleCollection operation.
+     * @callback module:api/ArticleApi~getArticleCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ImageImageListList>} data The data returned by the service call.
+     * @param {Array.<module:model/ArticleArticleListList>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieves the collection of Image resources.
+     * Retrieves the collection of Article resources.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page The collection page number
-     * @param {module:api/ImageApi~getImageCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ImageImageListList>}
+     * @param {module:api/ArticleApi~getArticleCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ArticleArticleListList>}
      */
-    this.getImageCollection = function(opts, callback) {
+    this.getArticleCollection = function(opts, callback) {
       opts = opts || {};
       var postBody = null;
 
@@ -276,35 +276,35 @@
       var authNames = ['oauth'];
       var contentTypes = [];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = [ImageImageListList];
+      var returnType = [ArticleArticleListList];
 
       return this.apiClient.callApi(
-        '/api/images', 'GET',
+        '/api/articles', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the getImageItem operation.
-     * @callback module:api/ImageApi~getImageItemCallback
+     * Callback function to receive the result of the getArticleItem operation.
+     * @callback module:api/ArticleApi~getArticleItemCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ImageImageReadRead} data The data returned by the service call.
+     * @param {module:model/ArticleArticleReadRead} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieves a Image resource.
+     * Retrieves a Article resource.
      * @param {String} id 
-     * @param {module:api/ImageApi~getImageItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ImageImageReadRead}
+     * @param {module:api/ArticleApi~getArticleItemCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ArticleArticleReadRead}
      */
-    this.getImageItem = function(id, callback) {
+    this.getArticleItem = function(id, callback) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getImageItem");
+        throw new Error("Missing the required parameter 'id' when calling getArticleItem");
       }
 
 
@@ -323,36 +323,33 @@
       var authNames = ['oauth'];
       var contentTypes = [];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = ImageImageReadRead;
+      var returnType = ArticleArticleReadRead;
 
       return this.apiClient.callApi(
-        '/api/images/{id}', 'GET',
+        '/api/articles/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the postImageCollection operation.
-     * @callback module:api/ImageApi~postImageCollectionCallback
+     * Callback function to receive the result of the postArticleCollection operation.
+     * @callback module:api/ArticleApi~postArticleCollectionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ImageImageCreateReadCreateReadRead} data The data returned by the service call.
+     * @param {module:model/ArticleArticleCreateReadCreateReadArticleReadRead} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Creates a Image resource.
-     * @param {module:model/ImageImageCreate} image The new Image resource
-     * @param {module:api/ImageApi~postImageCollectionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ImageImageCreateReadCreateReadRead}
+     * Creates a Article resource.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ArticleArticleCreate} opts.article The new Article resource
+     * @param {module:api/ArticleApi~postArticleCollectionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ArticleArticleCreateReadCreateReadArticleReadRead}
      */
-    this.postImageCollection = function(image, callback) {
-      var postBody = image;
-
-      // verify the required parameter 'image' is set
-      if (image === undefined || image === null) {
-        throw new Error("Missing the required parameter 'image' when calling postImageCollection");
-      }
+    this.postArticleCollection = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['article'];
 
 
       var pathParams = {
@@ -369,38 +366,38 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/ld+json', 'application/json', 'text/html'];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = ImageImageCreateReadCreateReadRead;
+      var returnType = ArticleArticleCreateReadCreateReadArticleReadRead;
 
       return this.apiClient.callApi(
-        '/api/images', 'POST',
+        '/api/articles', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the putImageItem operation.
-     * @callback module:api/ImageApi~putImageItemCallback
+     * Callback function to receive the result of the putArticleItem operation.
+     * @callback module:api/ArticleApi~putArticleItemCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ImageImageUpdateReadUpdateReadRead} data The data returned by the service call.
+     * @param {module:model/ArticleArticleUpdateReadUpdateReadArticleReadRead} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Replaces the Image resource.
+     * Replaces the Article resource.
      * @param {String} id 
      * @param {Object} opts Optional parameters
-     * @param {module:model/ImageImageUpdate} opts.image The updated Image resource
-     * @param {module:api/ImageApi~putImageItemCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ImageImageUpdateReadUpdateReadRead}
+     * @param {module:model/ArticleArticleUpdate} opts.article The updated Article resource
+     * @param {module:api/ArticleApi~putArticleItemCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ArticleArticleUpdateReadUpdateReadArticleReadRead}
      */
-    this.putImageItem = function(id, opts, callback) {
+    this.putArticleItem = function(id, opts, callback) {
       opts = opts || {};
-      var postBody = opts['image'];
+      var postBody = opts['article'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling putImageItem");
+        throw new Error("Missing the required parameter 'id' when calling putArticleItem");
       }
 
 
@@ -419,10 +416,10 @@
       var authNames = ['oauth'];
       var contentTypes = ['application/ld+json', 'application/json', 'text/html'];
       var accepts = ['application/ld+json', 'application/json', 'text/html'];
-      var returnType = ImageImageUpdateReadUpdateReadRead;
+      var returnType = ArticleArticleUpdateReadUpdateReadArticleReadRead;
 
       return this.apiClient.callApi(
-        '/api/images/{id}', 'PUT',
+        '/api/articles/{id}', 'PUT',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

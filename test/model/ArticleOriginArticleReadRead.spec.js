@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageVariationImageRead();
+    instance = new Podravkaio.ArticleOriginArticleReadRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,28 @@
       object[property] = value;
   }
 
-  describe('ImageVariationImageRead', function() {
-    it('should create an instance of ImageVariationImageRead', function() {
-      // uncomment below and update the code to test ImageVariationImageRead
-      //var instane = new Podravkaio.ImageVariationImageRead();
-      //expect(instance).to.be.a(Podravkaio.ImageVariationImageRead);
+  describe('ArticleOriginArticleReadRead', function() {
+    it('should create an instance of ArticleOriginArticleReadRead', function() {
+      // uncomment below and update the code to test ArticleOriginArticleReadRead
+      //var instane = new Podravkaio.ArticleOriginArticleReadRead();
+      //expect(instance).to.be.a(Podravkaio.ArticleOriginArticleReadRead);
     });
 
-    it('should have the property urlTemplate (base name: "url_template")', function() {
-      // uncomment below and update the code to test the property urlTemplate
-      //var instane = new Podravkaio.ImageVariationImageRead();
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new Podravkaio.ArticleOriginArticleReadRead();
       //expect(instance).to.be();
     });
 
-    it('should have the property urlVars (base name: "url_vars")', function() {
-      // uncomment below and update the code to test the property urlVars
-      //var instane = new Podravkaio.ImageVariationImageRead();
+    it('should have the property filename (base name: "filename")', function() {
+      // uncomment below and update the code to test the property filename
+      //var instane = new Podravkaio.ArticleOriginArticleReadRead();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property identifier (base name: "identifier")', function() {
+      // uncomment below and update the code to test the property identifier
+      //var instane = new Podravkaio.ArticleOriginArticleReadRead();
       //expect(instance).to.be();
     });
 

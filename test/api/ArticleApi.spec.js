@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Podravkaio.ImageApi();
+    instance = new Podravkaio.ArticleApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,7 +49,7 @@
       object[property] = value;
   }
 
-  describe('ImageApi', function() {
+  describe('ArticleApi', function() {
     describe('apiArticlesImagesGetSubresource', function() {
       it('should call apiArticlesImagesGetSubresource successfully', function(done) {
         //uncomment below and update the code to test apiArticlesImagesGetSubresource
@@ -60,70 +60,70 @@
         done();
       });
     });
-    describe('apiGetStateImageItem', function() {
-      it('should call apiGetStateImageItem successfully', function(done) {
-        //uncomment below and update the code to test apiGetStateImageItem
-        //instance.apiGetStateImageItem(function(error) {
+    describe('apiGetStateArticleItem', function() {
+      it('should call apiGetStateArticleItem successfully', function(done) {
+        //uncomment below and update the code to test apiGetStateArticleItem
+        //instance.apiGetStateArticleItem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('apiSetStateImageItem', function() {
-      it('should call apiSetStateImageItem successfully', function(done) {
-        //uncomment below and update the code to test apiSetStateImageItem
-        //instance.apiSetStateImageItem(function(error) {
+    describe('apiSetStateArticleItem', function() {
+      it('should call apiSetStateArticleItem successfully', function(done) {
+        //uncomment below and update the code to test apiSetStateArticleItem
+        //instance.apiSetStateArticleItem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteImageItem', function() {
-      it('should call deleteImageItem successfully', function(done) {
-        //uncomment below and update the code to test deleteImageItem
-        //instance.deleteImageItem(function(error) {
+    describe('deleteArticleItem', function() {
+      it('should call deleteArticleItem successfully', function(done) {
+        //uncomment below and update the code to test deleteArticleItem
+        //instance.deleteArticleItem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getImageCollection', function() {
-      it('should call getImageCollection successfully', function(done) {
-        //uncomment below and update the code to test getImageCollection
-        //instance.getImageCollection(function(error) {
+    describe('getArticleCollection', function() {
+      it('should call getArticleCollection successfully', function(done) {
+        //uncomment below and update the code to test getArticleCollection
+        //instance.getArticleCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getImageItem', function() {
-      it('should call getImageItem successfully', function(done) {
-        //uncomment below and update the code to test getImageItem
-        //instance.getImageItem(function(error) {
+    describe('getArticleItem', function() {
+      it('should call getArticleItem successfully', function(done) {
+        //uncomment below and update the code to test getArticleItem
+        //instance.getArticleItem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('postImageCollection', function() {
-      it('should call postImageCollection successfully', function(done) {
-        //uncomment below and update the code to test postImageCollection
-        //instance.postImageCollection(function(error) {
+    describe('postArticleCollection', function() {
+      it('should call postArticleCollection successfully', function(done) {
+        //uncomment below and update the code to test postArticleCollection
+        //instance.postArticleCollection(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('putImageItem', function() {
-      it('should call putImageItem successfully', function(done) {
-        //uncomment below and update the code to test putImageItem
-        //instance.putImageItem(function(error) {
+    describe('putArticleItem', function() {
+      it('should call putArticleItem successfully', function(done) {
+        //uncomment below and update the code to test putArticleItem
+        //instance.putArticleItem(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

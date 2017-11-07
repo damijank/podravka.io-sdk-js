@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **name** | **String** |  | 
 **createdAt** | **Date** |  | [optional] 
-**createdBy** | [**UserImageCreateReadReadList**](UserImageCreateReadReadList.md) |  | [optional] 
+**createdBy** | [**UserRead**](UserRead.md) |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
-**updatedBy** | [**UserImageCreateReadReadList**](UserImageCreateReadReadList.md) |  | [optional] 
+**updatedBy** | [**UserRead**](UserRead.md) |  | [optional] 
 **variations** | [**[ImageVariationImageRead]**](ImageVariationImageRead.md) |  | [optional] 
 
 
