@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **title** | **String** |  | 
 **state** | **String** |  | [optional] 
-**image** | [**ImageImageListList**](ImageImageListList.md) |  | [optional] 
+**image** | [**ImageRead**](ImageRead.md) |  | [optional] 
 **subtitle** | **String** |  | [optional] 
 **teaser** | **String** |  | [optional] 
 **location** | **String** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **publishedStart** | **Date** |  | [optional] 
 **publishedEnd** | **Date** |  | [optional] 
 **author** | [**UserRead**](UserRead.md) |  | [optional] 
-**images** | **[String]** |  | [optional] 
+**images** | [**[ImageRead]**](ImageRead.md) |  | [optional] 
 **origin** | [**ArticleOriginArticleReadRead**](ArticleOriginArticleReadRead.md) |  | [optional] 
 
 

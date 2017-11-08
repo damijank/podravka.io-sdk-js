@@ -1,7 +1,7 @@
 {
   "name": "podravkaio",
-  "version": "0.0.2",
-  "description": "ERROR_UNKNOWN",
+  "version": "0.0.2-a",
+  "description": "JS SDK for podravka-io platform",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

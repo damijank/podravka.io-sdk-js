@@ -25,7 +25,7 @@
     if (!root.Podravkaio) {
       root.Podravkaio = {};
     }
-    root.Podravkaio.UserRead = factory(root.Podravkaio.ApiClient);
+    root.Podravkaio.ImageRead = factory(root.Podravkaio.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,30 +34,31 @@
 
 
   /**
-   * The UserRead model module.
-   * @module model/UserRead
+   * The ImageRead model module.
+   * @module model/ImageRead
    * @version 0.0.2.1
    */
 
   /**
-   * Constructs a new <code>UserRead</code>.
-   * User.
-   * @alias module:model/UserRead
+   * Constructs a new <code>ImageRead</code>.
+   * Image.
+   * @alias module:model/ImageRead
    * @class
+   * @param name {String} 
    */
-  var exports = function() {
+  var exports = function(name) {
     var _this = this;
 
 
-
+    _this['name'] = name;
   };
 
   /**
-   * Constructs a <code>UserRead</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ImageRead</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/UserRead} obj Optional instance to populate.
-   * @return {module:model/UserRead} The populated <code>UserRead</code> instance.
+   * @param {module:model/ImageRead} obj Optional instance to populate.
+   * @return {module:model/ImageRead} The populated <code>ImageRead</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,8 +67,8 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
-      if (data.hasOwnProperty('username')) {
-        obj['username'] = ApiClient.convertToType(data['username'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
     }
     return obj;
@@ -78,9 +79,9 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {String} username
+   * @member {String} name
    */
-  exports.prototype['username'] = undefined;
+  exports.prototype['name'] = undefined;
 
 
 
