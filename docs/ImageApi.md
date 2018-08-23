@@ -1,39 +1,37 @@
 # Podravkaio.ImageApi
 
-All URIs are relative to *http://127.0.0.1:8000*
+All URIs are relative to *https://podravkaio.dev.webburza.eu/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiArticlesImagesGetSubresource**](ImageApi.md#apiArticlesImagesGetSubresource) | **GET** /api/articles/{id}/images | Retrieves the collection of Image resources.
-[**apiGetStateImageItem**](ImageApi.md#apiGetStateImageItem) | **GET** /api/images/{id}/state | Retrieves a Image resource.
-[**apiSetStateImageItem**](ImageApi.md#apiSetStateImageItem) | **PUT** /api/images/{id}/state/{state} | Replaces the Image resource.
-[**deleteImageItem**](ImageApi.md#deleteImageItem) | **DELETE** /api/images/{id} | Removes the Image resource.
-[**getImageCollection**](ImageApi.md#getImageCollection) | **GET** /api/images | Retrieves the collection of Image resources.
-[**getImageItem**](ImageApi.md#getImageItem) | **GET** /api/images/{id} | Retrieves a Image resource.
-[**postImageCollection**](ImageApi.md#postImageCollection) | **POST** /api/images | Creates a Image resource.
-[**putImageItem**](ImageApi.md#putImageItem) | **PUT** /api/images/{id} | Replaces the Image resource.
+[**createImage**](ImageApi.md#createImage) | **POST** /images | Creates a Image resource.
+[**deleteImage**](ImageApi.md#deleteImage) | **DELETE** /images/{id} | Removes the Image resource.
+[**getImage**](ImageApi.md#getImage) | **GET** /images/{id} | Retrieves a Image resource.
+[**getImageList**](ImageApi.md#getImageList) | **GET** /images | Retrieves the collection of Image resources.
+[**getImageState**](ImageApi.md#getImageState) | **GET** /images/{id}/state | Retrieves a Image resource.
+[**setImageState**](ImageApi.md#setImageState) | **PUT** /images/{id}/state/{state} | Replaces the Image resource.
+[**updateImage**](ImageApi.md#updateImage) | **PUT** /images/{id} | Replaces the Image resource.
 
 
-<a name="apiArticlesImagesGetSubresource"></a>
-# **apiArticlesImagesGetSubresource**
-> [ImageImageReadRead] apiArticlesImagesGetSubresource(id)
+<a name="createImage"></a>
+# **createImage**
+> ImageCreateRead createImage(imageCreate, opts)
 
-Retrieves the collection of Image resources.
+Creates a Image resource.
 
 ### Example
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ImageApi();
-
-var id = "id_example"; // String | 
-
-
+var imageCreate = new Podravkaio.ImageCreate(); // ImageCreate | The new Image resource
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -41,18 +39,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.apiArticlesImagesGetSubresource(id, callback);
+apiInstance.createImage(imageCreate, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **imageCreate** | [**ImageCreate**](ImageCreate.md)| The new Image resource | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
-[**[ImageImageReadRead]**](ImageImageReadRead.md)
+[**ImageCreateRead**](ImageCreateRead.md)
 
 ### Authorization
 
@@ -60,113 +59,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
+ - **Content-Type**: application/json, application/ld+json, text/html
+ - **Accept**: application/json, application/ld+json, text/html
 
-<a name="apiGetStateImageItem"></a>
-# **apiGetStateImageItem**
-> ImageApiState apiGetStateImageItem(id)
-
-Retrieves a Image resource.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.ImageApi();
-
-var id = "id_example"; // String | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.apiGetStateImageItem(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**ImageApiState**](ImageApiState.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
-
-<a name="apiSetStateImageItem"></a>
-# **apiSetStateImageItem**
-> ImageApiState apiSetStateImageItem(id, state)
-
-Replaces the Image resource.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.ImageApi();
-
-var id = "id_example"; // String | 
-
-var state = "state_example"; // String | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.apiSetStateImageItem(id, state, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **state** | **String**|  | 
-
-### Return type
-
-[**ImageApiState**](ImageApiState.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
-
-<a name="deleteImageItem"></a>
-# **deleteImageItem**
-> deleteImageItem(id)
+<a name="deleteImage"></a>
+# **deleteImage**
+> deleteImage(id, opts)
 
 Removes the Image resource.
 
@@ -174,16 +72,15 @@ Removes the Image resource.
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ImageApi();
-
 var id = "id_example"; // String | 
-
-
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -191,7 +88,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteImageItem(id, callback);
+apiInstance.deleteImage(id, opts, callback);
 ```
 
 ### Parameters
@@ -199,6 +96,7 @@ apiInstance.deleteImageItem(id, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
@@ -213,59 +111,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getImageCollection"></a>
-# **getImageCollection**
-> [ImageImageListList] getImageCollection(opts)
-
-Retrieves the collection of Image resources.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.ImageApi();
-
-var opts = { 
-  'page': 56 // Number | The collection page number
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getImageCollection(opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Number**| The collection page number | [optional] 
-
-### Return type
-
-[**[ImageImageListList]**](ImageImageListList.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
-
-<a name="getImageItem"></a>
-# **getImageItem**
-> ImageImageReadRead getImageItem(id)
+<a name="getImage"></a>
+# **getImage**
+> ImageRead getImage(id, opts)
 
 Retrieves a Image resource.
 
@@ -273,16 +121,15 @@ Retrieves a Image resource.
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ImageApi();
-
 var id = "id_example"; // String | 
-
-
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -290,7 +137,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getImageItem(id, callback);
+apiInstance.getImage(id, opts, callback);
 ```
 
 ### Parameters
@@ -298,10 +145,11 @@ apiInstance.getImageItem(id, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
-[**ImageImageReadRead**](ImageImageReadRead.md)
+[**ImageRead**](ImageRead.md)
 
 ### Authorization
 
@@ -310,28 +158,27 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
+ - **Accept**: application/json, application/ld+json, text/html
 
-<a name="postImageCollection"></a>
-# **postImageCollection**
-> ImageImageCreateReadCreateReadRead postImageCollection(image)
+<a name="getImageList"></a>
+# **getImageList**
+> [ImageList] getImageList(opts)
 
-Creates a Image resource.
+Retrieves the collection of Image resources.
 
 ### Example
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ImageApi();
-
-var image = new Podravkaio.ImageImageCreate(); // ImageImageCreate | The new Image resource
-
-
+var opts = {
+  'acceptLanguage': "acceptLanguage_example", // String | Locale code
+  'page': 56 // Number | The collection page number
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -339,18 +186,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postImageCollection(image, callback);
+apiInstance.getImageList(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImageImageCreate**](ImageImageCreate.md)| The new Image resource | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+ **page** | **Number**| The collection page number | [optional] 
 
 ### Return type
 
-[**ImageImageCreateReadCreateReadRead**](ImageImageCreateReadCreateReadRead.md)
+[**[ImageList]**](ImageList.md)
 
 ### Authorization
 
@@ -358,32 +206,28 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/ld+json, text/html
 
-<a name="putImageItem"></a>
-# **putImageItem**
-> ImageImageUpdateReadUpdateReadRead putImageItem(id, opts)
+<a name="getImageState"></a>
+# **getImageState**
+> ImageState getImageState(id, opts)
 
-Replaces the Image resource.
+Retrieves a Image resource.
 
 ### Example
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ImageApi();
-
 var id = "id_example"; // String | 
-
-var opts = { 
-  'image': new Podravkaio.ImageImageUpdate() // ImageImageUpdate | The updated Image resource
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
 };
-
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -391,7 +235,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.putImageItem(id, opts, callback);
+apiInstance.getImageState(id, opts, callback);
 ```
 
 ### Parameters
@@ -399,11 +243,11 @@ apiInstance.putImageItem(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **image** | [**ImageImageUpdate**](ImageImageUpdate.md)| The updated Image resource | [optional] 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
-[**ImageImageUpdateReadUpdateReadRead**](ImageImageUpdateReadUpdateReadRead.md)
+[**ImageState**](ImageState.md)
 
 ### Authorization
 
@@ -411,6 +255,108 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/ld+json, text/html
+
+<a name="setImageState"></a>
+# **setImageState**
+> ImageState setImageState(id, state, opts)
+
+Replaces the Image resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ImageApi();
+var id = "id_example"; // String | 
+var state = "state_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setImageState(id, state, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **state** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**ImageState**](ImageState.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/ld+json, text/html
+
+<a name="updateImage"></a>
+# **updateImage**
+> ImageUpdateRead updateImage(id, opts)
+
+Replaces the Image resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ImageApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example", // String | Locale code
+  'imageUpdate': new Podravkaio.ImageUpdate() // ImageUpdate | The updated Image resource
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateImage(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+ **imageUpdate** | [**ImageUpdate**](ImageUpdate.md)| The updated Image resource | [optional] 
+
+### Return type
+
+[**ImageUpdateRead**](ImageUpdateRead.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/ld+json, text/html
+ - **Accept**: application/json, application/ld+json, text/html
 

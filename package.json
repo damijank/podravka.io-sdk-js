@@ -1,7 +1,7 @@
 {
   "name": "podravkaio",
-  "version": "0.0.2-a",
-  "description": "JS SDK for podravka-io platform",
+  "version": "0.1.0",
+  "description": "ERROR_UNKNOWN",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "3.5.2"
+    "superagent": "3.7.0"
   },
   "devDependencies": {
     "mocha": "~2.3.4",

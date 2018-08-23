@@ -1,39 +1,37 @@
 # Podravkaio.ArticleApi
 
-All URIs are relative to *http://127.0.0.1:8000*
+All URIs are relative to *https://podravkaio.dev.webburza.eu/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiArticlesImagesGetSubresource**](ArticleApi.md#apiArticlesImagesGetSubresource) | **GET** /api/articles/{id}/images | Retrieves the collection of Image resources.
-[**apiGetStateArticleItem**](ArticleApi.md#apiGetStateArticleItem) | **GET** /api/articles/{id}/state | Retrieves a Article resource.
-[**apiSetStateArticleItem**](ArticleApi.md#apiSetStateArticleItem) | **PUT** /api/articles/{id}/state/{state} | Replaces the Article resource.
-[**deleteArticleItem**](ArticleApi.md#deleteArticleItem) | **DELETE** /api/articles/{id} | Removes the Article resource.
-[**getArticleCollection**](ArticleApi.md#getArticleCollection) | **GET** /api/articles | Retrieves the collection of Article resources.
-[**getArticleItem**](ArticleApi.md#getArticleItem) | **GET** /api/articles/{id} | Retrieves a Article resource.
-[**postArticleCollection**](ArticleApi.md#postArticleCollection) | **POST** /api/articles | Creates a Article resource.
-[**putArticleItem**](ArticleApi.md#putArticleItem) | **PUT** /api/articles/{id} | Replaces the Article resource.
+[**createArticle**](ArticleApi.md#createArticle) | **POST** /articles | Creates a Article resource.
+[**deleteArticle**](ArticleApi.md#deleteArticle) | **DELETE** /articles/{id} | Removes the Article resource.
+[**getArticle**](ArticleApi.md#getArticle) | **GET** /articles/{id} | Retrieves a Article resource.
+[**getArticleList**](ArticleApi.md#getArticleList) | **GET** /articles | Retrieves the collection of Article resources.
+[**getArticleState**](ArticleApi.md#getArticleState) | **GET** /articles/{id}/state | Retrieves a Article resource.
+[**setArticleState**](ArticleApi.md#setArticleState) | **PUT** /articles/{id}/state/{state} | Replaces the Article resource.
+[**updateArticle**](ArticleApi.md#updateArticle) | **PUT** /articles/{id} | Replaces the Article resource.
 
 
-<a name="apiArticlesImagesGetSubresource"></a>
-# **apiArticlesImagesGetSubresource**
-> [ImageImageReadRead] apiArticlesImagesGetSubresource(id)
+<a name="createArticle"></a>
+# **createArticle**
+> ArticleRead createArticle(opts)
 
-Retrieves the collection of Image resources.
+Creates a Article resource.
 
 ### Example
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ArticleApi();
-
-var id = "id_example"; // String | 
-
-
+var opts = {
+  'acceptLanguage': "acceptLanguage_example", // String | Locale code
+  'articleCreate': new Podravkaio.ArticleCreate() // ArticleCreate | The new Article resource
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -41,18 +39,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.apiArticlesImagesGetSubresource(id, callback);
+apiInstance.createArticle(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+ **articleCreate** | [**ArticleCreate**](ArticleCreate.md)| The new Article resource | [optional] 
 
 ### Return type
 
-[**[ImageImageReadRead]**](ImageImageReadRead.md)
+[**ArticleRead**](ArticleRead.md)
 
 ### Authorization
 
@@ -60,113 +59,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
+ - **Content-Type**: application/json, application/ld+json, text/html
+ - **Accept**: application/json, application/ld+json, text/html
 
-<a name="apiGetStateArticleItem"></a>
-# **apiGetStateArticleItem**
-> ArticleApiState apiGetStateArticleItem(id)
-
-Retrieves a Article resource.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.ArticleApi();
-
-var id = "id_example"; // String | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.apiGetStateArticleItem(id, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**ArticleApiState**](ArticleApiState.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
-
-<a name="apiSetStateArticleItem"></a>
-# **apiSetStateArticleItem**
-> ArticleApiState apiSetStateArticleItem(id, state)
-
-Replaces the Article resource.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.ArticleApi();
-
-var id = "id_example"; // String | 
-
-var state = "state_example"; // String | 
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.apiSetStateArticleItem(id, state, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **state** | **String**|  | 
-
-### Return type
-
-[**ArticleApiState**](ArticleApiState.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
-
-<a name="deleteArticleItem"></a>
-# **deleteArticleItem**
-> deleteArticleItem(id)
+<a name="deleteArticle"></a>
+# **deleteArticle**
+> deleteArticle(id, opts)
 
 Removes the Article resource.
 
@@ -174,16 +72,15 @@ Removes the Article resource.
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ArticleApi();
-
 var id = "id_example"; // String | 
-
-
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -191,7 +88,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteArticleItem(id, callback);
+apiInstance.deleteArticle(id, opts, callback);
 ```
 
 ### Parameters
@@ -199,6 +96,7 @@ apiInstance.deleteArticleItem(id, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
@@ -213,59 +111,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="getArticleCollection"></a>
-# **getArticleCollection**
-> [ArticleArticleListList] getArticleCollection(opts)
-
-Retrieves the collection of Article resources.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.ArticleApi();
-
-var opts = { 
-  'page': 56 // Number | The collection page number
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getArticleCollection(opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Number**| The collection page number | [optional] 
-
-### Return type
-
-[**[ArticleArticleListList]**](ArticleArticleListList.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
-
-<a name="getArticleItem"></a>
-# **getArticleItem**
-> ArticleArticleReadRead getArticleItem(id)
+<a name="getArticle"></a>
+# **getArticle**
+> ArticleRead getArticle(id, opts)
 
 Retrieves a Article resource.
 
@@ -273,16 +121,15 @@ Retrieves a Article resource.
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ArticleApi();
-
 var id = "id_example"; // String | 
-
-
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -290,7 +137,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getArticleItem(id, callback);
+apiInstance.getArticle(id, opts, callback);
 ```
 
 ### Parameters
@@ -298,10 +145,11 @@ apiInstance.getArticleItem(id, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
-[**ArticleArticleReadRead**](ArticleArticleReadRead.md)
+[**ArticleRead**](ArticleRead.md)
 
 ### Authorization
 
@@ -310,29 +158,27 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/ld+json, application/json, text/html
+ - **Accept**: application/json, application/ld+json, text/html
 
-<a name="postArticleCollection"></a>
-# **postArticleCollection**
-> ArticleArticleCreateReadCreateReadArticleReadRead postArticleCollection(opts)
+<a name="getArticleList"></a>
+# **getArticleList**
+> [ArticleList] getArticleList(opts)
 
-Creates a Article resource.
+Retrieves the collection of Article resources.
 
 ### Example
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ArticleApi();
-
-var opts = { 
-  'article': new Podravkaio.ArticleArticleCreate() // ArticleArticleCreate | The new Article resource
+var opts = {
+  'acceptLanguage': "acceptLanguage_example", // String | Locale code
+  'page': 56 // Number | The collection page number
 };
-
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -340,18 +186,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.postArticleCollection(opts, callback);
+apiInstance.getArticleList(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **article** | [**ArticleArticleCreate**](ArticleArticleCreate.md)| The new Article resource | [optional] 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+ **page** | **Number**| The collection page number | [optional] 
 
 ### Return type
 
-[**ArticleArticleCreateReadCreateReadArticleReadRead**](ArticleArticleCreateReadCreateReadArticleReadRead.md)
+[**[ArticleList]**](ArticleList.md)
 
 ### Authorization
 
@@ -359,32 +206,28 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/ld+json, text/html
 
-<a name="putArticleItem"></a>
-# **putArticleItem**
-> ArticleArticleUpdateReadUpdateReadArticleReadRead putArticleItem(id, opts)
+<a name="getArticleState"></a>
+# **getArticleState**
+> ArticleState getArticleState(id, opts)
 
-Replaces the Article resource.
+Retrieves a Article resource.
 
 ### Example
 ```javascript
 var Podravkaio = require('podravkaio');
 var defaultClient = Podravkaio.ApiClient.instance;
-
 // Configure OAuth2 access token for authorization: oauth
 var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.ArticleApi();
-
 var id = "id_example"; // String | 
-
-var opts = { 
-  'article': new Podravkaio.ArticleArticleUpdate() // ArticleArticleUpdate | The updated Article resource
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
 };
-
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -392,7 +235,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.putArticleItem(id, opts, callback);
+apiInstance.getArticleState(id, opts, callback);
 ```
 
 ### Parameters
@@ -400,11 +243,11 @@ apiInstance.putArticleItem(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **article** | [**ArticleArticleUpdate**](ArticleArticleUpdate.md)| The updated Article resource | [optional] 
+ **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
 
-[**ArticleArticleUpdateReadUpdateReadArticleReadRead**](ArticleArticleUpdateReadUpdateReadArticleReadRead.md)
+[**ArticleState**](ArticleState.md)
 
 ### Authorization
 
@@ -412,6 +255,108 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/ld+json, application/json, text/html
- - **Accept**: application/ld+json, application/json, text/html
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/ld+json, text/html
+
+<a name="setArticleState"></a>
+# **setArticleState**
+> ArticleState setArticleState(id, state, opts)
+
+Replaces the Article resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ArticleApi();
+var id = "id_example"; // String | 
+var state = "state_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.setArticleState(id, state, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **state** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**ArticleState**](ArticleState.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/ld+json, text/html
+
+<a name="updateArticle"></a>
+# **updateArticle**
+> ArticleRead updateArticle(id, opts)
+
+Replaces the Article resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ArticleApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example", // String | Locale code
+  'articleUpdate': new Podravkaio.ArticleUpdate() // ArticleUpdate | The updated Article resource
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateArticle(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+ **articleUpdate** | [**ArticleUpdate**](ArticleUpdate.md)| The updated Article resource | [optional] 
+
+### Return type
+
+[**ArticleRead**](ArticleRead.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/ld+json, text/html
+ - **Accept**: application/json, application/ld+json, text/html
 
