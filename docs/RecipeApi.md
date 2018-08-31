@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**deleteRecipe**](RecipeApi.md#deleteRecipe) | **DELETE** /recipes/{id} | Removes the Recipe resource.
 [**getRecipe**](RecipeApi.md#getRecipe) | **GET** /recipes/{id} | Retrieves a Recipe resource.
 [**getRecipeList**](RecipeApi.md#getRecipeList) | **GET** /recipes | Retrieves the collection of Recipe resources.
+[**getRecipeListMetrics**](RecipeApi.md#getRecipeListMetrics) | **GET** /recipes/metrics | Retrieves the metrics of Recipe collection.
+[**getRecipeMetrics**](RecipeApi.md#getRecipeMetrics) | **GET** /recipes/{id}/metrics | Retrieves the metrics of Recipe resource.
 [**getRecipeState**](RecipeApi.md#getRecipeState) | **GET** /recipes/{id}/state | Retrieves a Recipe resource.
 [**setRecipeState**](RecipeApi.md#setRecipeState) | **PUT** /recipes/{id}/state/{state} | Replaces the Recipe resource.
 [**updateRecipe**](RecipeApi.md#updateRecipe) | **PUT** /recipes/{id} | Replaces the Recipe resource.
@@ -59,8 +61,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteRecipe"></a>
 # **deleteRecipe**
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getRecipeList"></a>
 # **getRecipeList**
@@ -207,7 +209,103 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
+
+<a name="getRecipeListMetrics"></a>
+# **getRecipeListMetrics**
+> Metrics getRecipeListMetrics(opts)
+
+Retrieves the metrics of Recipe collection.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.RecipeApi();
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getRecipeListMetrics(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getRecipeMetrics"></a>
+# **getRecipeMetrics**
+> Metrics getRecipeMetrics(id, opts)
+
+Retrieves the metrics of Recipe resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.RecipeApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getRecipeMetrics(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getRecipeState"></a>
 # **getRecipeState**
@@ -256,7 +354,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="setRecipeState"></a>
 # **setRecipeState**
@@ -307,7 +405,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateRecipe"></a>
 # **updateRecipe**
@@ -357,6 +455,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

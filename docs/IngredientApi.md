@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**deleteIngredient**](IngredientApi.md#deleteIngredient) | **DELETE** /ingredients/{id} | Removes the Ingredient resource.
 [**getIngredient**](IngredientApi.md#getIngredient) | **GET** /ingredients/{id} | Retrieves a Ingredient resource.
 [**getIngredientList**](IngredientApi.md#getIngredientList) | **GET** /ingredients | Retrieves the collection of Ingredient resources.
+[**getIngredientListMetrics**](IngredientApi.md#getIngredientListMetrics) | **GET** /ingredients/metrics | Retrieves the metrics of Ingredient collection.
+[**getIngredientMetrics**](IngredientApi.md#getIngredientMetrics) | **GET** /ingredients/{id}/metrics | Retrieves the metrics of Ingredient resource.
 [**getIngredientState**](IngredientApi.md#getIngredientState) | **GET** /ingredients/{id}/state | Retrieves a Ingredient resource.
 [**setIngredientState**](IngredientApi.md#setIngredientState) | **PUT** /ingredients/{id}/state/{state} | Replaces the Ingredient resource.
 [**updateIngredient**](IngredientApi.md#updateIngredient) | **PUT** /ingredients/{id} | Replaces the Ingredient resource.
@@ -59,8 +61,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteIngredient"></a>
 # **deleteIngredient**
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getIngredientList"></a>
 # **getIngredientList**
@@ -207,7 +209,103 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
+
+<a name="getIngredientListMetrics"></a>
+# **getIngredientListMetrics**
+> Metrics getIngredientListMetrics(opts)
+
+Retrieves the metrics of Ingredient collection.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.IngredientApi();
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getIngredientListMetrics(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getIngredientMetrics"></a>
+# **getIngredientMetrics**
+> Metrics getIngredientMetrics(id, opts)
+
+Retrieves the metrics of Ingredient resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.IngredientApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getIngredientMetrics(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getIngredientState"></a>
 # **getIngredientState**
@@ -256,7 +354,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="setIngredientState"></a>
 # **setIngredientState**
@@ -307,7 +405,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateIngredient"></a>
 # **updateIngredient**
@@ -357,6 +455,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

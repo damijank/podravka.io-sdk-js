@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **launchedAt** | **Date** |  | [optional] 
 **images** | [**[ImageEmbed]**](ImageEmbed.md) |  | [optional] 
 **nutritionDeclaration** | [**NutritionDeclarationEmbed**](NutritionDeclarationEmbed.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

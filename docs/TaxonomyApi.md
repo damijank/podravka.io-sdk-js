@@ -4,31 +4,30 @@ All URIs are relative to *https://podravkaio.dev.webburza.eu/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createContentTaxon**](TaxonomyApi.md#createContentTaxon) | **POST** /{entity_name}/{entity_id}/taxons/{bag_name} | Creates a ContentTaxon resource.
-[**createTaxon**](TaxonomyApi.md#createTaxon) | **POST** /taxons/{taxonomy_name} | Creates a Taxon resource.
+[**createContentTaxon**](TaxonomyApi.md#createContentTaxon) | **POST** /{entity}/{id}/taxons/{bag} | Creates a ContentTaxon resource.
+[**createTaxon**](TaxonomyApi.md#createTaxon) | **POST** /taxons/{taxonomy} | Creates a Taxon resource.
 [**createTaxonBag**](TaxonomyApi.md#createTaxonBag) | **POST** /taxons-bags | Creates a TaxonBag resource.
 [**createTaxonomy**](TaxonomyApi.md#createTaxonomy) | **POST** /taxonomies | Creates a Taxonomy resource.
-[**deleteContentTaxon**](TaxonomyApi.md#deleteContentTaxon) | **DELETE** /{entity_name}/{entity_id}/taxons/{bag_name}/{id} | Removes the ContentTaxon resource.
-[**deleteTaxon**](TaxonomyApi.md#deleteTaxon) | **DELETE** /taxons/{taxonomy_name}/{id} | Removes the Taxon resource.
+[**deleteContentTaxon**](TaxonomyApi.md#deleteContentTaxon) | **DELETE** /{entity}/{id}/taxons/{bag}/{id} | Removes the ContentTaxon resource.
+[**deleteTaxon**](TaxonomyApi.md#deleteTaxon) | **DELETE** /taxons/{taxonomy}/{id} | Removes the Taxon resource.
 [**deleteTaxonBag**](TaxonomyApi.md#deleteTaxonBag) | **DELETE** /taxons-bags/{id} | Removes the TaxonBag resource.
 [**deleteTaxonomy**](TaxonomyApi.md#deleteTaxonomy) | **DELETE** /taxonomies/{id} | Removes the Taxonomy resource.
-[**getContentTaxon**](TaxonomyApi.md#getContentTaxon) | **GET** /{entity_name}/{entity_id}/taxons/{bag_name}/{id} | Retrieves a ContentTaxon resource.
-[**getContentTaxonList**](TaxonomyApi.md#getContentTaxonList) | **GET** /{entity_name}/{entity_id}/taxons/{bag_name} | Retrieves the collection of ContentTaxon resources.
-[**getTaxon**](TaxonomyApi.md#getTaxon) | **GET** /taxons/{taxonomy_name}/{id} | Retrieves a Taxon resource.
+[**getContentTaxon**](TaxonomyApi.md#getContentTaxon) | **GET** /{entity}/{id}/taxons/{bag}/{id} | Retrieves a ContentTaxon resource.
+[**getContentTaxonList**](TaxonomyApi.md#getContentTaxonList) | **GET** /{entity}/{id}/taxons/{bag} | Retrieves the collection of ContentTaxon resources.
+[**getTaxon**](TaxonomyApi.md#getTaxon) | **GET** /taxons/{taxonomy}/{id} | Retrieves a Taxon resource.
 [**getTaxonBag**](TaxonomyApi.md#getTaxonBag) | **GET** /taxons-bags/{id} | Retrieves a TaxonBag resource.
 [**getTaxonBagList**](TaxonomyApi.md#getTaxonBagList) | **GET** /taxons-bags | Retrieves the collection of TaxonBag resources.
-[**getTaxonList**](TaxonomyApi.md#getTaxonList) | **GET** /taxons/{taxonomy_name} | Retrieves the collection of Taxon resources.
+[**getTaxonList**](TaxonomyApi.md#getTaxonList) | **GET** /taxons/{taxonomy} | Retrieves the collection of Taxon resources.
 [**getTaxonomy**](TaxonomyApi.md#getTaxonomy) | **GET** /taxonomies/{id} | Retrieves a Taxonomy resource.
 [**getTaxonomyList**](TaxonomyApi.md#getTaxonomyList) | **GET** /taxonomies | Retrieves the collection of Taxonomy resources.
-[**updateContentTaxon**](TaxonomyApi.md#updateContentTaxon) | **PUT** /{entity_name}/{entity_id}/taxons/{bag_name}/{id} | Replaces the ContentTaxon resource.
-[**updateTaxon**](TaxonomyApi.md#updateTaxon) | **PUT** /taxons/{taxonomy_name}/{id} | Replaces the Taxon resource.
+[**updateTaxon**](TaxonomyApi.md#updateTaxon) | **PUT** /taxons/{taxonomy}/{id} | Replaces the Taxon resource.
 [**updateTaxonBag**](TaxonomyApi.md#updateTaxonBag) | **PUT** /taxons-bags/{id} | Replaces the TaxonBag resource.
 [**updateTaxonomy**](TaxonomyApi.md#updateTaxonomy) | **PUT** /taxonomies/{id} | Replaces the Taxonomy resource.
 
 
 <a name="createContentTaxon"></a>
 # **createContentTaxon**
-> ContentTaxonRead createContentTaxon(entityName, entityId, bagName, opts)
+> ContentTaxonRead createContentTaxon(entity, id, bag, opts)
 
 Creates a ContentTaxon resource.
 
@@ -41,9 +40,9 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var entityName = "entityName_example"; // String | 
-var entityId = null; // String | 
-var bagName = "bagName_example"; // String | 
+var entity = "entity_example"; // String | 
+var id = null; // String | 
+var bag = "bag_example"; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example", // String | Locale code
   'contentTaxonCreate': new Podravkaio.ContentTaxonCreate() // ContentTaxonCreate | The new ContentTaxon resource
@@ -55,16 +54,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createContentTaxon(entityName, entityId, bagName, opts, callback);
+apiInstance.createContentTaxon(entity, id, bag, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityName** | **String**|  | 
- **entityId** | [**String**](.md)|  | 
- **bagName** | **String**|  | 
+ **entity** | **String**|  | 
+ **id** | [**String**](.md)|  | 
+ **bag** | **String**|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
  **contentTaxonCreate** | [**ContentTaxonCreate**](ContentTaxonCreate.md)| The new ContentTaxon resource | [optional] 
 
@@ -78,12 +77,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createTaxon"></a>
 # **createTaxon**
-> TaxonRead createTaxon(taxonomyName, opts)
+> TaxonRead createTaxon(taxonomy, opts)
 
 Creates a Taxon resource.
 
@@ -96,7 +95,7 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var taxonomyName = "taxonomyName_example"; // String | 
+var taxonomy = "taxonomy_example"; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example", // String | Locale code
   'taxonCreate': new Podravkaio.TaxonCreate() // TaxonCreate | The new Taxon resource
@@ -108,14 +107,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createTaxon(taxonomyName, opts, callback);
+apiInstance.createTaxon(taxonomy, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxonomyName** | **String**|  | 
+ **taxonomy** | **String**|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
  **taxonCreate** | [**TaxonCreate**](TaxonCreate.md)| The new Taxon resource | [optional] 
 
@@ -129,8 +128,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createTaxonBag"></a>
 # **createTaxonBag**
@@ -178,8 +177,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createTaxonomy"></a>
 # **createTaxonomy**
@@ -227,12 +226,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteContentTaxon"></a>
 # **deleteContentTaxon**
-> deleteContentTaxon(id, entityName, entityId, bagName, opts)
+> deleteContentTaxon(id, entity, bag, opts)
 
 Removes the ContentTaxon resource.
 
@@ -246,9 +245,8 @@ oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
 var id = null; // String | 
-var entityName = "entityName_example"; // String | 
-var entityId = null; // String | 
-var bagName = "bagName_example"; // String | 
+var entity = "entity_example"; // String | 
+var bag = "bag_example"; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example" // String | Locale code
 };
@@ -259,7 +257,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteContentTaxon(id, entityName, entityId, bagName, opts, callback);
+apiInstance.deleteContentTaxon(id, entity, bag, opts, callback);
 ```
 
 ### Parameters
@@ -267,9 +265,8 @@ apiInstance.deleteContentTaxon(id, entityName, entityId, bagName, opts, callback
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**String**](.md)|  | 
- **entityName** | **String**|  | 
- **entityId** | [**String**](.md)|  | 
- **bagName** | **String**|  | 
+ **entity** | **String**|  | 
+ **bag** | **String**|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
@@ -287,7 +284,7 @@ null (empty response body)
 
 <a name="deleteTaxon"></a>
 # **deleteTaxon**
-> deleteTaxon(taxonomyName, id, opts)
+> deleteTaxon(taxonomy, id, opts)
 
 Removes the Taxon resource.
 
@@ -300,7 +297,7 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var taxonomyName = "taxonomyName_example"; // String | 
+var taxonomy = "taxonomy_example"; // String | 
 var id = null; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example" // String | Locale code
@@ -312,14 +309,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteTaxon(taxonomyName, id, opts, callback);
+apiInstance.deleteTaxon(taxonomy, id, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxonomyName** | **String**|  | 
+ **taxonomy** | **String**|  | 
  **id** | [**String**](.md)|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
 
@@ -436,7 +433,7 @@ null (empty response body)
 
 <a name="getContentTaxon"></a>
 # **getContentTaxon**
-> ContentTaxonRead getContentTaxon(id, entityName, entityId, bagName, opts)
+> ContentTaxonRead getContentTaxon(id, entity, bag, opts)
 
 Retrieves a ContentTaxon resource.
 
@@ -450,9 +447,8 @@ oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
 var id = null; // String | 
-var entityName = "entityName_example"; // String | 
-var entityId = null; // String | 
-var bagName = "bagName_example"; // String | 
+var entity = "entity_example"; // String | 
+var bag = "bag_example"; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example" // String | Locale code
 };
@@ -463,7 +459,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getContentTaxon(id, entityName, entityId, bagName, opts, callback);
+apiInstance.getContentTaxon(id, entity, bag, opts, callback);
 ```
 
 ### Parameters
@@ -471,9 +467,8 @@ apiInstance.getContentTaxon(id, entityName, entityId, bagName, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**String**](.md)|  | 
- **entityName** | **String**|  | 
- **entityId** | [**String**](.md)|  | 
- **bagName** | **String**|  | 
+ **entity** | **String**|  | 
+ **bag** | **String**|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
 
 ### Return type
@@ -487,11 +482,11 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getContentTaxonList"></a>
 # **getContentTaxonList**
-> [ContentTaxonList] getContentTaxonList(entityName, entityId, bagName, opts)
+> [ContentTaxonList] getContentTaxonList(entity, id, bag, opts)
 
 Retrieves the collection of ContentTaxon resources.
 
@@ -504,9 +499,9 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var entityName = "entityName_example"; // String | 
-var entityId = null; // String | 
-var bagName = "bagName_example"; // String | 
+var entity = "entity_example"; // String | 
+var id = null; // String | 
+var bag = "bag_example"; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example", // String | Locale code
   'page': 56 // Number | The collection page number
@@ -518,16 +513,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getContentTaxonList(entityName, entityId, bagName, opts, callback);
+apiInstance.getContentTaxonList(entity, id, bag, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entityName** | **String**|  | 
- **entityId** | [**String**](.md)|  | 
- **bagName** | **String**|  | 
+ **entity** | **String**|  | 
+ **id** | [**String**](.md)|  | 
+ **bag** | **String**|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
  **page** | **Number**| The collection page number | [optional] 
 
@@ -542,11 +537,11 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getTaxon"></a>
 # **getTaxon**
-> TaxonRead getTaxon(taxonomyName, id, opts)
+> TaxonRead getTaxon(taxonomy, id, opts)
 
 Retrieves a Taxon resource.
 
@@ -559,7 +554,7 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var taxonomyName = "taxonomyName_example"; // String | 
+var taxonomy = "taxonomy_example"; // String | 
 var id = null; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example" // String | Locale code
@@ -571,14 +566,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTaxon(taxonomyName, id, opts, callback);
+apiInstance.getTaxon(taxonomy, id, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxonomyName** | **String**|  | 
+ **taxonomy** | **String**|  | 
  **id** | [**String**](.md)|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
 
@@ -593,7 +588,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getTaxonBag"></a>
 # **getTaxonBag**
@@ -642,7 +637,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getTaxonBagList"></a>
 # **getTaxonBagList**
@@ -691,11 +686,11 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getTaxonList"></a>
 # **getTaxonList**
-> [TaxonList] getTaxonList(taxonomyName, opts)
+> [TaxonList] getTaxonList(taxonomy, opts)
 
 Retrieves the collection of Taxon resources.
 
@@ -708,7 +703,7 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var taxonomyName = "taxonomyName_example"; // String | 
+var taxonomy = "taxonomy_example"; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example", // String | Locale code
   'page': 56 // Number | The collection page number
@@ -720,14 +715,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTaxonList(taxonomyName, opts, callback);
+apiInstance.getTaxonList(taxonomy, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxonomyName** | **String**|  | 
+ **taxonomy** | **String**|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
  **page** | **Number**| The collection page number | [optional] 
 
@@ -742,7 +737,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getTaxonomy"></a>
 # **getTaxonomy**
@@ -791,7 +786,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getTaxonomyList"></a>
 # **getTaxonomyList**
@@ -840,68 +835,11 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
-
-<a name="updateContentTaxon"></a>
-# **updateContentTaxon**
-> ContentTaxonRead updateContentTaxon(id, entityName, entityId, bagName, opts)
-
-Replaces the ContentTaxon resource.
-
-### Example
-```javascript
-var Podravkaio = require('podravkaio');
-var defaultClient = Podravkaio.ApiClient.instance;
-// Configure OAuth2 access token for authorization: oauth
-var oauth = defaultClient.authentications['oauth'];
-oauth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new Podravkaio.TaxonomyApi();
-var id = null; // String | 
-var entityName = "entityName_example"; // String | 
-var entityId = null; // String | 
-var bagName = "bagName_example"; // String | 
-var opts = {
-  'acceptLanguage': "acceptLanguage_example", // String | Locale code
-  'contentTaxonUpdate': new Podravkaio.ContentTaxonUpdate() // ContentTaxonUpdate | The updated ContentTaxon resource
-};
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateContentTaxon(id, entityName, entityId, bagName, opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**String**](.md)|  | 
- **entityName** | **String**|  | 
- **entityId** | [**String**](.md)|  | 
- **bagName** | **String**|  | 
- **acceptLanguage** | **String**| Locale code | [optional] 
- **contentTaxonUpdate** | [**ContentTaxonUpdate**](ContentTaxonUpdate.md)| The updated ContentTaxon resource | [optional] 
-
-### Return type
-
-[**ContentTaxonRead**](ContentTaxonRead.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateTaxon"></a>
 # **updateTaxon**
-> TaxonRead updateTaxon(taxonomyName, id, opts)
+> TaxonRead updateTaxon(taxonomy, id, opts)
 
 Replaces the Taxon resource.
 
@@ -914,7 +852,7 @@ var oauth = defaultClient.authentications['oauth'];
 oauth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new Podravkaio.TaxonomyApi();
-var taxonomyName = "taxonomyName_example"; // String | 
+var taxonomy = "taxonomy_example"; // String | 
 var id = null; // String | 
 var opts = {
   'acceptLanguage': "acceptLanguage_example", // String | Locale code
@@ -927,14 +865,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateTaxon(taxonomyName, id, opts, callback);
+apiInstance.updateTaxon(taxonomy, id, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxonomyName** | **String**|  | 
+ **taxonomy** | **String**|  | 
  **id** | [**String**](.md)|  | 
  **acceptLanguage** | **String**| Locale code | [optional] 
  **taxonUpdate** | [**TaxonUpdate**](TaxonUpdate.md)| The updated Taxon resource | [optional] 
@@ -949,8 +887,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="updateTaxonBag"></a>
 # **updateTaxonBag**
@@ -1000,8 +938,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="updateTaxonomy"></a>
 # **updateTaxonomy**
@@ -1051,6 +989,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

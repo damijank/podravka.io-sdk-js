@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **publishedEnd** | **Date** |  | [optional] 
 **author** | [**UserEmbed**](UserEmbed.md) |  | [optional] 
 **images** | [**[ImageEmbed]**](ImageEmbed.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

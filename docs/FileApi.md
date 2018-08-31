@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**deleteFile**](FileApi.md#deleteFile) | **DELETE** /files/{id} | Removes the File resource.
 [**getFile**](FileApi.md#getFile) | **GET** /files/{id} | Retrieves a File resource.
 [**getFileList**](FileApi.md#getFileList) | **GET** /files | Retrieves the collection of File resources.
+[**getFileListMetrics**](FileApi.md#getFileListMetrics) | **GET** /files/metrics | Retrieves the metrics of File collection.
+[**getFileMetrics**](FileApi.md#getFileMetrics) | **GET** /files/{id}/metrics | Retrieves the metrics of File resource.
 [**getFileState**](FileApi.md#getFileState) | **GET** /files/{id}/state | Retrieves a File resource.
 [**setFileState**](FileApi.md#setFileState) | **PUT** /files/{id}/state/{state} | Replaces the File resource.
 [**updateFile**](FileApi.md#updateFile) | **PUT** /files/{id} | Replaces the File resource.
@@ -59,8 +61,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteFile"></a>
 # **deleteFile**
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getFileList"></a>
 # **getFileList**
@@ -207,7 +209,97 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
+
+<a name="getFileListMetrics"></a>
+# **getFileListMetrics**
+> [Metrics] getFileListMetrics()
+
+Retrieves the metrics of File collection.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.FileApi();
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFileListMetrics(callback);
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[Metrics]**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getFileMetrics"></a>
+# **getFileMetrics**
+> Metrics getFileMetrics(id, opts)
+
+Retrieves the metrics of File resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.FileApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFileMetrics(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getFileState"></a>
 # **getFileState**
@@ -256,7 +348,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="setFileState"></a>
 # **setFileState**
@@ -309,7 +401,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateFile"></a>
 # **updateFile**
@@ -359,6 +451,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**deleteArticle**](ArticleApi.md#deleteArticle) | **DELETE** /articles/{id} | Removes the Article resource.
 [**getArticle**](ArticleApi.md#getArticle) | **GET** /articles/{id} | Retrieves a Article resource.
 [**getArticleList**](ArticleApi.md#getArticleList) | **GET** /articles | Retrieves the collection of Article resources.
+[**getArticleListMetrics**](ArticleApi.md#getArticleListMetrics) | **GET** /articles/metrics | Retrieves the metrics of Article collection.
+[**getArticleMetrics**](ArticleApi.md#getArticleMetrics) | **GET** /articles/{id}/metrics | Retrieves the metrics of Article resource.
 [**getArticleState**](ArticleApi.md#getArticleState) | **GET** /articles/{id}/state | Retrieves a Article resource.
 [**setArticleState**](ArticleApi.md#setArticleState) | **PUT** /articles/{id}/state/{state} | Replaces the Article resource.
 [**updateArticle**](ArticleApi.md#updateArticle) | **PUT** /articles/{id} | Replaces the Article resource.
@@ -59,8 +61,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteArticle"></a>
 # **deleteArticle**
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getArticleList"></a>
 # **getArticleList**
@@ -207,7 +209,103 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
+
+<a name="getArticleListMetrics"></a>
+# **getArticleListMetrics**
+> Metrics getArticleListMetrics(opts)
+
+Retrieves the metrics of Article collection.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ArticleApi();
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArticleListMetrics(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getArticleMetrics"></a>
+# **getArticleMetrics**
+> Metrics getArticleMetrics(id, opts)
+
+Retrieves the metrics of Article resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ArticleApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArticleMetrics(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getArticleState"></a>
 # **getArticleState**
@@ -256,7 +354,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="setArticleState"></a>
 # **setArticleState**
@@ -307,7 +405,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateArticle"></a>
 # **updateArticle**
@@ -357,6 +455,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

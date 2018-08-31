@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **logo** | [**ImageEmbed**](ImageEmbed.md) |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

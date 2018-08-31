@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**deleteProduct**](ProductApi.md#deleteProduct) | **DELETE** /products/{id} | Removes the Product resource.
 [**getProduct**](ProductApi.md#getProduct) | **GET** /products/{id} | Retrieves a Product resource.
 [**getProductList**](ProductApi.md#getProductList) | **GET** /products | Retrieves the collection of Product resources.
+[**getProductListMetrics**](ProductApi.md#getProductListMetrics) | **GET** /products/metrics | Retrieves the metrics of Product collection.
+[**getProductMetrics**](ProductApi.md#getProductMetrics) | **GET** /products/{id}/metrics | Retrieves the metrics of Product resource.
 [**getProductState**](ProductApi.md#getProductState) | **GET** /products/{id}/state | Retrieves a Product resource.
 [**setProductState**](ProductApi.md#setProductState) | **PUT** /products/{id}/state/{state} | Replaces the Product resource.
 [**updateProduct**](ProductApi.md#updateProduct) | **PUT** /products/{id} | Replaces the Product resource.
@@ -59,8 +61,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteProduct"></a>
 # **deleteProduct**
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getProductList"></a>
 # **getProductList**
@@ -207,7 +209,103 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
+
+<a name="getProductListMetrics"></a>
+# **getProductListMetrics**
+> Metrics getProductListMetrics(opts)
+
+Retrieves the metrics of Product collection.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ProductApi();
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getProductListMetrics(opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getProductMetrics"></a>
+# **getProductMetrics**
+> Metrics getProductMetrics(id, opts)
+
+Retrieves the metrics of Product resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.ProductApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getProductMetrics(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getProductState"></a>
 # **getProductState**
@@ -256,7 +354,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="setProductState"></a>
 # **setProductState**
@@ -307,7 +405,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateProduct"></a>
 # **updateProduct**
@@ -357,6 +455,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **createdBy** | **String** |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **updatedBy** | **String** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

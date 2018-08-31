@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **content** | **String** |  | [optional] 
 **publishedAt** | **Date** |  | [optional] 
 **nutritionDeclaration** | [**NutritionDeclarationCreate**](NutritionDeclarationCreate.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

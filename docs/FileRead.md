@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** |  | [optional] 
 **updatedBy** | [**UserEmbed**](UserEmbed.md) |  | [optional] 
 **url** | **String** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

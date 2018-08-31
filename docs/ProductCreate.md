@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **images** | **[String]** |  | [optional] 
 **origin** | [**ProductOriginCreate**](ProductOriginCreate.md) |  | [optional] 
 **nutritionDeclaration** | [**NutritionDeclarationCreate**](NutritionDeclarationCreate.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

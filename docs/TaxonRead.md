@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **image** | **String** |  | 
 **children** | [**[TaxonRead]**](TaxonRead.md) |  | [optional] 
 **position** | **Number** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

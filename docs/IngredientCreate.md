@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **publishedAt** | **Date** |  | [optional] 
 **origin** | [**IngredientOriginCreate**](IngredientOriginCreate.md) |  | [optional] 
 **nutritionDeclaration** | [**NutritionDeclarationCreate**](NutritionDeclarationCreate.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

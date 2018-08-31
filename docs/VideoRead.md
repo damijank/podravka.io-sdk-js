@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **createdBy** | [**UserEmbed**](UserEmbed.md) |  | [optional] 
 **updatedAt** | **Date** |  | [optional] 
 **updatedBy** | [**UserEmbed**](UserEmbed.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

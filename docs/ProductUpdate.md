@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **launchedAt** | **Date** |  | [optional] 
 **images** | **[String]** |  | [optional] 
 **nutritionDeclaration** | [**NutritionDeclarationCreate**](NutritionDeclarationCreate.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

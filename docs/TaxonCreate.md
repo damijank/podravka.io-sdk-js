@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **image** | **String** |  | [optional] 
 **parent** | **String** |  | [optional] 
 **position** | **Number** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

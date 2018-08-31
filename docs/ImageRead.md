@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **updatedAt** | **Date** |  | [optional] 
 **updatedBy** | [**UserEmbed**](UserEmbed.md) |  | [optional] 
 **variations** | [**[ImageVariationEmbed]**](ImageVariationEmbed.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

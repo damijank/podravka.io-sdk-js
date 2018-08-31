@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **publishedEnd** | **Date** |  | [optional] 
 **author** | **String** |  | [optional] 
 **images** | **[String]** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 **origin** | [**ArticleOriginCreate**](ArticleOriginCreate.md) |  | [optional] 
 
 

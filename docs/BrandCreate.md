@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **statement** | **String** |  | [optional] 
 **lead** | **String** |  | [optional] 
 **content** | **String** |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

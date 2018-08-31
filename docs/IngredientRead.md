@@ -21,5 +21,6 @@ Name | Type | Description | Notes
 **publishRequestedBy** | [**UserEmbed**](UserEmbed.md) |  | [optional] 
 **publishedAt** | **Date** |  | [optional] 
 **nutritionDeclaration** | [**NutritionDeclarationEmbed**](NutritionDeclarationEmbed.md) |  | [optional] 
+**extendedAttributes** | **Object** |  | [optional] 
 
 

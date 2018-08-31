@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**deleteBrand**](BrandApi.md#deleteBrand) | **DELETE** /brands/{id} | Removes the Brand resource.
 [**getBrand**](BrandApi.md#getBrand) | **GET** /brands/{id} | Retrieves a Brand resource.
 [**getBrandList**](BrandApi.md#getBrandList) | **GET** /brands | Retrieves the collection of Brand resources.
+[**getBrandListMetrics**](BrandApi.md#getBrandListMetrics) | **GET** /brands/metrics | Retrieves the metrics of Brand collection.
+[**getBrandMetrics**](BrandApi.md#getBrandMetrics) | **GET** /brands/{id}/metrics | Retrieves the metrics of Brand resource.
 [**getBrandState**](BrandApi.md#getBrandState) | **GET** /brands/{id}/state | Retrieves a Brand resource.
 [**setBrandState**](BrandApi.md#setBrandState) | **PUT** /brands/{id}/state/{state} | Replaces the Brand resource.
 [**updateBrand**](BrandApi.md#updateBrand) | **PUT** /brands/{id} | Replaces the Brand resource.
@@ -59,8 +61,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="deleteBrand"></a>
 # **deleteBrand**
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="getBrandList"></a>
 # **getBrandList**
@@ -207,7 +209,97 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
+
+<a name="getBrandListMetrics"></a>
+# **getBrandListMetrics**
+> [Metrics] getBrandListMetrics()
+
+Retrieves the metrics of Brand collection.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.BrandApi();
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBrandListMetrics(callback);
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[Metrics]**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getBrandMetrics"></a>
+# **getBrandMetrics**
+> Metrics getBrandMetrics(id, opts)
+
+Retrieves the metrics of Brand resource.
+
+### Example
+```javascript
+var Podravkaio = require('podravkaio');
+var defaultClient = Podravkaio.ApiClient.instance;
+// Configure OAuth2 access token for authorization: oauth
+var oauth = defaultClient.authentications['oauth'];
+oauth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new Podravkaio.BrandApi();
+var id = "id_example"; // String | 
+var opts = {
+  'acceptLanguage': "acceptLanguage_example" // String | Locale code
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBrandMetrics(id, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **acceptLanguage** | **String**| Locale code | [optional] 
+
+### Return type
+
+[**Metrics**](Metrics.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getBrandState"></a>
 # **getBrandState**
@@ -256,7 +348,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="setBrandState"></a>
 # **setBrandState**
@@ -307,7 +399,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/ld+json, text/html
+ - **Accept**: application/json
 
 <a name="updateBrand"></a>
 # **updateBrand**
@@ -357,6 +449,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/ld+json, text/html
- - **Accept**: application/json, application/ld+json, text/html
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
